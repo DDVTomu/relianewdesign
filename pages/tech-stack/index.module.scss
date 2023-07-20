@@ -1,0 +1,317 @@
+@import "@assets/css/main.scss";
+
+.hero {
+  padding-top: 133px;
+  position: relative;
+  overflow: hidden;
+
+  &__bg_ellipse_1 {
+    position: absolute;
+    right: -1vw;
+    bottom: 0;
+    width: 264px;
+
+    @include media(mobile, tablet, lg-tablet, lg-mobile) {
+      right: -2vw;
+      width: 164px;
+    }
+  }
+
+  &__bg_ellipse_2 {
+    position: absolute;
+    bottom: -20px;
+    z-index: -1;
+    width: 564px;
+
+    @include media(mobile, tablet, lg-tablet, lg-mobile) {
+      bottom: 320px;
+      z-index: -1;
+      width: 264px;
+    }
+  }
+
+  &__mini_sub {
+    font-family: "HelveticaNeue";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 0.363354px;
+    text-transform: uppercase;
+    color: #5e5e5e;
+    margin-bottom: 14px;
+  }
+
+  &__sub_heading {
+    text-align: justify;
+    width: 647px;
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 24px;
+    height: 209px;
+    color: #5e5e5e;
+    margin: 0px;
+
+    @include media(laptop, mobile, lg-mobile, lg-tablet, tablet) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__container {
+    @include mobile {
+      z-index: 2;
+      position: relative;
+    }
+
+    & h1 {
+      font-weight: 700;
+      font-size: 58px;
+      line-height: 68px;
+      margin-top: 0 0 23px;
+      color: #5e5e5e;
+
+      @include mobile {
+        font-size: 40px;
+        line-height: 55px;
+        color: #050426;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    @include media(laptop, mobile, lg-mobile, lg-tablet, tablet) {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+      max-width: 100%;
+      margin-top: 80px;
+    }
+  }
+
+  &__inner_logo {
+    margin-top: 106px;
+  }
+
+  &__col_left {
+    width: 50%;
+
+    @include media(laptop, mobile, lg-mobile, lg-tablet, tablet) {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+
+    & h2 {
+      margin-top: 0px;
+      width: 482px;
+      font-weight: 700;
+      font-size: 3.6rem;
+      line-height: 52px;
+      color: #5e5e5e;
+      margin-right: 30px;
+
+      @include media(mobile, lg-mobile) {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+    }
+  }
+
+  &__col_right {
+    width: 50%;
+
+    @include media(laptop, mobile, lg-mobile, lg-tablet, tablet) {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+
+    p {
+      margin-top: 0px;
+      width: 554px;
+      font-family: "HelveticaNeue";
+      font-weight: 5;
+      font-size: 1.6rem;
+      line-height: 24px;
+      text-align: justify;
+      color: #5e5e5e;
+
+      @include media(laptop, mobile, lg-mobile, lg-tablet, tablet) {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+    }
+  }
+
+  &__img_left {
+    width: 50%;
+    padding-right: 30px;
+    padding-left: 15px;
+    border-right: 1px solid #000;
+
+    @include media(laptop, mobile, lg-mobile, lg-tablet, tablet) {
+      padding: 0px;
+      flex: 0 0 auto;
+      width: 100%;
+      border: none;
+    }
+  }
+
+  &__img_right {
+    width: 50%;
+    padding-right: 15px;
+    padding-left: 30px;
+
+    @include media(laptop, mobile, lg-mobile, lg-tablet, tablet) {
+      flex: 0 0 auto;
+      width: 100%;
+      padding: 0px;
+    }
+  }
+
+  &__header_box {
+    display: flex;
+    align-items: center;
+
+    @include media(mobile, tablet) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__top_header {
+    width: 100%;
+
+    &__heading {
+      font-family: "Lexend";
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 75px;
+      color: #050426;
+
+      & span {
+        font-size: 40px;
+      }
+    }
+
+    & p {
+      font-family: "Lexend";
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 48px;
+      color: #050426;
+    }
+
+    &__img_box {
+      width: 50%;
+      position: relative;
+    }
+
+    &__button {
+      padding: 20px 48px;
+      background: #e94118;
+      border: 2px solid #e94118;
+      border-radius: 8px;
+      font-family: "Lexend";
+      font-weight: 700;
+      font-size: 1.125rem;
+      display: inline-block;
+      text-transform: uppercase;
+      color: #ffffff;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: #fff;
+        color: #e94118;
+      }
+      @include media(mobile) {
+        padding: 15px 20px;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.applications {
+  margin-bottom: 60px;
+
+  &__header {
+    font-family: "Lexend";
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 50px;
+    letter-spacing: 1.35px;
+
+    & h2 {
+      @include mobile {
+        line-height: 23px;
+        font-size: 17px;
+        letter-spacing: 0;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 80px;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 55px;
+    padding: 0 120px;
+
+    @include media(mobile, lg-mobile, lg-tablet, tablet) {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    & li a {
+      background: #ffffff;
+      border: 1px solid #eeeeee;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
+      width: 184px;
+      display: flex;
+      align-items: center;
+      padding: 11px;
+      column-gap: 8px;
+
+      @include media(mobile, lg-mobile, lg-tablet, tablet) {
+        width: calc((100% - 24px) / 2);
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        transition: transform 0.2s ease-in-out,
+          -webkit-transform 0.2s ease-in-out;
+      }
+    }
+  }
+
+  &__apps {
+    & h2 {
+      font-family: "Lexend";
+      font-weight: 700;
+      font-size: 33px;
+      line-height: 19px;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      margin-top: 141px;
+      margin-bottom: 85px;
+
+      @include media(mobile, lg-mobile, lg-tablet, tablet) {
+        line-height: 40px;
+        margin-top: 60px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        justify-content: center;
+      }
+
+      color: #000000;
+    }
+  }
+}
