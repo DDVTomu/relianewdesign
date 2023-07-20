@@ -980,18 +980,17 @@ pre tt:after {
       margin-bottom: 0;
     }
 
-    .nav-social{
-      li:not(:first-child){
+    .nav-social {
+      li:not(:first-child) {
         margin-left: 30px;
       }
     }
 
-    .nav-social,.nav-social li {
+    .nav-social,
+    .nav-social li {
       margin-bottom: 0;
     }
   }
-
-
 }
 
 .nav-social {
@@ -1029,8 +1028,8 @@ pre tt:after {
   margin: 0 auto;
 
   @media only screen and (max-width: 767px) {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   &--medium {
@@ -1143,7 +1142,9 @@ pre tt:after {
     justify-content: space-between;
     z-index: 20;
     position: relative;
-
+    @media only screen and (max-width: 767px) {
+      padding: 0px;
+    }
     &-text {
       h1 {
         color: #fff;
@@ -1238,7 +1239,7 @@ pre tt:after {
     }
     /* the parent */
     .slick-list {
-      margin: 0 -10px;
+      // margin: 0 -10px;
       width: 100%;
     }
     &-gradientLeft {
@@ -1248,6 +1249,9 @@ pre tt:after {
       position: absolute;
       width: 200px;
       height: 100%;
+      @media only screen and (max-width: 767px) {
+        background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 50%);
+      }
     }
 
     &-gradientRight {
@@ -1257,6 +1261,9 @@ pre tt:after {
       position: absolute;
       width: 200px;
       height: 100%;
+      @media only screen and (max-width: 767px) {
+        background: linear-gradient(-90deg, #000 0%, rgba(0, 0, 0, 0) 50%);
+      }
     }
   }
 
@@ -1315,10 +1322,16 @@ pre tt:after {
   &-row {
     display: flex;
     column-gap: 80px;
+    @media only screen and (max-width: 767px) {
+      flex-direction: column-reverse;
+    }
   }
   &-desc {
     width: 700px;
     text-align: left;
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
     & h2 {
       color: #282828;
       font-family: Inter;
@@ -1327,11 +1340,19 @@ pre tt:after {
       font-weight: 800;
       margin-top: 0;
       margin-bottom: 51px;
+      @media only screen and (max-width: 767px) {
+        font-size: 38px;
+        margin-bottom: 31px;
+        text-align: center;
+      }
     }
     &-row {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 40px;
+      @media only screen and (max-width: 767px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
     &-col {
       & h3 {
@@ -1341,6 +1362,11 @@ pre tt:after {
         font-size: 48px;
         font-weight: 800;
         letter-spacing: 0.25px;
+        @media only screen and (max-width: 767px) {
+          font-size: 38px;
+          margin-bottom: 21px;
+          text-align: center;
+        }
       }
       & p {
         margin: 0;
@@ -1349,6 +1375,10 @@ pre tt:after {
         font-size: 20px;
         font-weight: 500;
         line-height: 32px;
+        @media only screen and (max-width: 767px) {
+          font-size: 18px;
+          text-align: center;
+        }
       }
     }
   }
@@ -1356,6 +1386,9 @@ pre tt:after {
   &-code {
     width: 300px;
     position: relative;
+    @media only screen and (max-width: 767px) {
+      margin: auto;
+    }
     &-image {
     }
     &-techbox {
@@ -1367,6 +1400,10 @@ pre tt:after {
       border: 0.5px #b2bec3 solid;
       position: absolute;
       top: 100px;
+      @media only screen and (max-width: 767px) {
+        position: static;
+        margin-bottom: 51px;
+      }
       & h3 {
         color: #282828;
         font-size: 24px;
@@ -1397,6 +1434,10 @@ pre tt:after {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 80px;
     row-gap: 41px;
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   &__block {
     position: relative;
@@ -1417,6 +1458,9 @@ pre tt:after {
       margin-bottom: 60px;
       display: flex;
       align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
     }
   }
 
@@ -1672,12 +1716,21 @@ pre tt:after {
     &__row {
       display: flex;
       gap: 40px;
+      @media only screen and (max-width: 767px) {
+        flex-direction: column;
+      }
       &_img {
         width: 258px;
+        @media only screen and (max-width: 767px) {
+          width: 100%;
+        }
       }
 
       &_head {
         width: calc(100% - 258px);
+        @media only screen and (max-width: 767px) {
+          width: 100%;
+        }
       }
     }
   }
@@ -1710,7 +1763,10 @@ pre tt:after {
     position: relative;
     justify-content: space-between;
     gap: 30px;
+
     @media only screen and (max-width: 767px) {
+      gap: 50px;
+      flex-direction: column;
       width: 100%;
     }
 
@@ -1758,6 +1814,9 @@ pre tt:after {
     &__item {
       position: relative;
       width: 340px;
+      @media only screen and (max-width: 767px) {
+        margin: auto;
+      }
       &_quote {
         padding: 20px;
         position: relative;
@@ -1885,7 +1944,6 @@ pre tt:after {
 
   &__list {
     display: flex;
-
     @media only screen and (max-width: 767px) {
       flex-direction: column;
     }
@@ -1902,6 +1960,10 @@ pre tt:after {
               0.3
             )
             0%, transparent 40%, transparent 100%);
+      @media only screen and (max-width: 767px) {
+        position: static;
+        margin-bottom: 51px;
+      }
       @media only screen and (max-width: 767px) {
         width: 100%;
         box-sizing: border-box;
@@ -2072,6 +2134,13 @@ pre tt:after {
     position: absolute;
     width: 200px;
     height: 100%;
+    @media only screen and (max-width: 767px) {
+      background: linear-gradient(
+        90deg,
+        #f3f0ff 0%,
+        rgba(243, 240, 255, 0) 30%
+      );
+    }
   }
 
   &__gradientRight {
@@ -2085,6 +2154,13 @@ pre tt:after {
     position: absolute;
     width: 200px;
     height: 100%;
+    @media only screen and (max-width: 767px) {
+      background: linear-gradient(
+        -90deg,
+        #f3f0ff 0%,
+        rgba(243, 240, 255, 0) 30%
+      );
+    }
   }
 
   @media only screen and (max-width: 767px) {
@@ -2224,10 +2300,16 @@ pre tt:after {
     .slick-prev,
     .slick-next {
       z-index: 30;
+      @media only screen and (max-width: 767px) {
+        top: 420px;
+      }
     }
 
     .slick-prev {
       left: 154px;
+      @media only screen and (max-width: 767px) {
+        left: 134px;
+      }
       &:before {
         opacity: 1;
         content: url("/images/icon/i-prev.svg");
@@ -2267,6 +2349,11 @@ pre tt:after {
     display: flex;
     gap: 40px;
     align-items: center;
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+
     &-desc {
       width: 300px;
       & h2 {
@@ -2275,6 +2362,9 @@ pre tt:after {
         font-weight: 800;
         margin-top: 0px;
         margin-bottom: 11px;
+        @media only screen and (max-width: 767px) {
+          text-align: center;
+        }
       }
       & p {
         color: #636e72;
@@ -2282,6 +2372,9 @@ pre tt:after {
         font-weight: 500;
         line-height: 32px;
         margin: 0;
+        @media only screen and (max-width: 767px) {
+          text-align: center;
+        }
       }
     }
 
@@ -2291,6 +2384,10 @@ pre tt:after {
       grid-template-columns: repeat(4, 1fr);
       column-gap: 47px;
       row-gap: 50px;
+      @media only screen and (max-width: 767px) {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 }
@@ -2301,7 +2398,7 @@ pre tt:after {
   padding-bottom: 84px;
 
   @media only screen and (max-width: 767px) {
-    padding: 0 0 5.25em;
+    padding: 80px 0px ;
   }
 
   &-loading {
@@ -2335,16 +2432,20 @@ pre tt:after {
     display: flex;
     justify-content: space-between;
     @media only screen and (max-width: 767px) {
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
 
     &__map {
       width: 480px;
       @media only screen and (max-width: 767px) {
         width: 100%;
+        margin-bottom: 40px;
       }
       &_info {
         margin-bottom: 40px;
+        @media only screen and (max-width: 767px) {
+          margin-bottom: 20px;
+        }
         &.social {
           margin-bottom: 0px;
         }
@@ -2353,12 +2454,18 @@ pre tt:after {
           font-size: 24px;
           font-weight: 600;
           margin-bottom: 10px;
+          @media only screen and (max-width: 767px) {
+            font-size: 16px;
+          }
         }
         & p {
           color: #282828;
           font-size: 24px;
           font-weight: 400;
           margin: 0;
+          @media only screen and (max-width: 767px) {
+            font-size: 16px;
+          }
         }
 
         .nav-social {
@@ -6271,7 +6378,9 @@ label {
     display: flex;
     justify-content: space-between;
     column-gap: 93px;
-
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+    }
     &-col {
       width: 200px;
       text-align: center;
@@ -6279,6 +6388,12 @@ label {
       border-radius: 20px;
       border: 1px solid #b2bec3;
       background: #fff;
+      @media only screen and (max-width: 767px) {
+        width: 100%;
+        &:not(:last-child){
+          margin-bottom: 21px;
+        }
+      }
       & h3 {
         color: #8f69ff;
         font-size: 36px;
