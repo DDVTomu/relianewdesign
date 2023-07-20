@@ -803,7 +803,9 @@ pre tt:after {
 /* #footer
 -------------------------------------------------- */
 .footer {
-  background: #f7f8fa;
+  // background: #f7f8fa;
+  background: #000000;
+  color: #ffffff;
   padding-top: 4em;
 
   @media only screen and (max-width: 767px) {
@@ -818,8 +820,9 @@ pre tt:after {
     justify-content: space-between;
 
     .col {
-      width: calc((100% - 200px) / 3);
-      margin-left: 100px;
+      // width: calc((100% - 200px) / 3);
+      width: 340px;
+      // margin-left: 100px;
 
       @media only screen and (max-width: 767px) {
         width: 100%;
@@ -857,9 +860,10 @@ pre tt:after {
         font-weight: 800;
         line-height: 1;
         letter-spacing: -0.72px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         margin-top: 0;
-
+        font-size: 24px;
+        font-weight: 600;
         @media only screen and (max-width: 767px) {
           margin-bottom: 1em;
 
@@ -868,13 +872,24 @@ pre tt:after {
             display: inherit;
           }
         }
+
+        &-logo {
+          margin-top: 44px;
+          margin-bottom: 0;
+        }
       }
 
       &.col-contact {
         margin-left: 0;
 
         h6 {
-          margin: 15px 0 10px;
+          margin: 0px;
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        p {
+          margin-bottom: 24px;
         }
 
         small {
@@ -888,11 +903,12 @@ pre tt:after {
       ul {
         list-style: none;
         margin-left: 0;
+        margin-bottom: 31px;
       }
 
       .nav-footer {
-        width: 50%;
-        float: left;
+        // width: 50%;
+        // float: left;
         margin-bottom: 0;
 
         & + .nav-footer {
@@ -901,6 +917,7 @@ pre tt:after {
 
         li {
           a {
+            color: #636e72;
             position: relative;
             transition: all 0.3s ease-in;
 
@@ -911,13 +928,13 @@ pre tt:after {
               display: inline-block;
               position: absolute;
               left: 0;
-              background: #e84118;
+              background: #8f69ff;
               transition: all 0.3s ease-in;
               bottom: -2px;
             }
 
             &:hover {
-              color: #e84118;
+              color: #8f69ff;
 
               &::before {
                 width: 100%;
@@ -938,20 +955,43 @@ pre tt:after {
           }
         }
       }
+
+      & p {
+        color: #636e72;
+      }
     }
   }
 
-  .text-copyright {
-    text-align: center;
-    border-top: 1px solid #dbdde4;
-    padding: 1.5em 1em;
-    margin-bottom: 0;
-
-    @media only screen and (max-width: 767px) {
-      padding: 1em 0;
-      font-size: 14px;
+  &-navbar {
+    & li {
+      margin-bottom: 11px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
+
+  .copyright {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-bottom: 58px;
+    .text-copyright {
+      margin-bottom: 0;
+    }
+
+    .nav-social{
+      li:not(:first-child){
+        margin-left: 30px;
+      }
+    }
+
+    .nav-social,.nav-social li {
+      margin-bottom: 0;
+    }
+  }
+
+
 }
 
 .nav-social {
@@ -1015,8 +1055,7 @@ pre tt:after {
     transform: translateY(-5px);
     border-bottom: 5px solid #6248b1;
     box-shadow: 0px 8px 50px -3px rgba(0, 0, 0, 0.12),
-      0px 0px 0px 0px rgba(0, 0, 0, 0.14),
-      0px 12px 12px -2px rgba(0, 0, 0, 0.2);
+      0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 12px 12px -2px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -2785,12 +2824,11 @@ pre tt:after {
 .nav-link {
   display: block;
   padding: 0;
-  text-transform: uppercase;
   position: relative;
   transition: all 0.3s ease;
-  font-size: 14px;
-  font-weight: bold;
-
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2;
   @media only screen and (max-width: 767px) {
     font-size: 26px;
   }
@@ -2802,14 +2840,14 @@ pre tt:after {
     right: 100%;
     height: 2px;
     width: 0;
-    background-color: #e84118;
+    background-color: #8f69ff;
     content: "";
     transition: all 0.3s ease;
   }
 
   &.current,
   &:hover {
-    color: #e84118;
+    color: #8f69ff;
 
     &::before {
       width: 100%;
