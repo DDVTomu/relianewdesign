@@ -2512,7 +2512,8 @@ pre tt:after {
       label {
         margin-bottom: 0;
         transition: all 0.3s;
-        top: 20px;
+        // top: 20px;
+        top: 30px;
         left: 0;
         position: absolute;
       }
@@ -3206,8 +3207,8 @@ pre tt:after {
   border-radius: 8px;
   padding: 0.75em 2.5em;
   text-transform: uppercase;
-  border: 2px solid #e84118;
-  color: #e84118;
+  // border: 2px solid #8f69ff;
+  color: #fff;
   transition: color 0.25s 0.0833333333s;
   position: relative;
   overflow: hidden;
@@ -6413,7 +6414,10 @@ label {
 }
 
 .nav-item {
+  position: relative;
   .solid-button {
+    position: absolute;
+    bottom: -29px;
     color: #fff;
     padding: 11px;
     &::before {

@@ -158,7 +158,7 @@ const ContactForm = ({
               </div>
               <button
                 type="submit"
-                className="btn btn-primary"
+                className="btn solid-button"
                 disabled={!isValid}
               >
                 Submit
