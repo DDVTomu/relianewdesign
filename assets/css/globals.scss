@@ -2175,7 +2175,7 @@ pre tt:after {
     }
 
     .item {
-      width: calc((100% - 114px) / 3);
+      // width: calc((100% - 114px) / 3);
 
       @media only screen and (max-width: 767px) {
         width: 100%;
@@ -6359,8 +6359,8 @@ label {
     ),
     #fff;
   &-desc {
-    color: #282828;
-    font-size: 14px;
+    color: #636E72;
+    font-size: 18px;
     font-weight: 500;
     line-height: 30px;
     margin-bottom: 30px;

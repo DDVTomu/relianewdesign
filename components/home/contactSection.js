@@ -59,8 +59,8 @@ const ContactForm = ({
               <div className="contact__block__map_info social">
                 <label>You can also reach out to us on</label>
                 <ul className="list-inline nav-social">
-                  {dataSocial.map((social) => (
-                    <li>
+                  {dataSocial.map((social, key) => (
+                    <li key={key}>
                       <a
                         href="https://twitter.com/softwarerelia"
                         className="btn btn-twitter"

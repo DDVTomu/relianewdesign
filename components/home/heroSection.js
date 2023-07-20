@@ -25,25 +25,24 @@ const HeroSection = React.memo(() => {
 
   const settings = {
     slidesToShow: 5,
-    autoplay: true,
+    autoplay: "true",
     autoplaySpeed: 100,
     speed: 4000,
-    infinite: true,
-    focusOnSelect: false,
-    center: true,
-    centerMode: true,
+    infinite: "true",
+    focusOnSelect: "false",
+    center: "true",
     responsive: [
       {
         breakpoint: 768,
         settings: {
-          arrows: false,
+          arrows: "false",
           slidesToShow: 1,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          arrows: false,
+          arrows: "false",
           slidesToShow: 1,
         },
       },

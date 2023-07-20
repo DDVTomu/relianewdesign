@@ -9,13 +9,13 @@ import Animation from "@components/common/Animation";
 class ClientSection extends React.Component {
   render() {
     const settings = {
-      centerMode: true,
-      dots: true,
-      infinite: true,
-      speed: 500,
-      arrows: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+      center: "true",
+      dots: "true",
+      infinite: "true",
+      speed: "500",
+      arrows: "false",
+      slidestoshow: "1",
+      slidestoscroll: "1",
     };
 
     return (
@@ -52,8 +52,8 @@ class ClientSection extends React.Component {
           </div>
           <div className="clients__wrap">
             <div {...settings} className="clients__slider">
-              {dataClient.map((data) => (
-                <div className="clients__slider__item">
+              {dataClient.map((data, key) => (
+                <div key={key} className="clients__slider__item">
                   <p className="clients__slider__item_quote">{data.desc}</p>
                   <div className="author">
                     <ExportedImage

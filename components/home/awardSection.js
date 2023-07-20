@@ -18,23 +18,24 @@ const AwardSection = React.memo(() => (
         </Animation>
       </div>
       <div className="awards__list">
-        {dataAward.map((award) => (
+        {dataAward.map((award, key) => (
           <Animation
+            key={key}
             className="item"
             style={{
               background: award.color,
             }}
           >
             <div className="item__top">
-                <ExportedImage
-                  src={award.image}
-                  width={award.width}
-                  height={award.height}
-                  layout="intrinsic"
-                  loading="lazy"
-                  alt="Ruby On Rails"
-                />
-              </div>
+              <ExportedImage
+                src={award.image}
+                width={award.width}
+                height={award.height}
+                layout="intrinsic"
+                loading="lazy"
+                alt="Ruby On Rails"
+              />
+            </div>
             <div className="item__bootom">
               <p>{award.desc}</p>
             </div>

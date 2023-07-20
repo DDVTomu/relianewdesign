@@ -87,8 +87,8 @@ const Footer = () => {
           &copy; 2023 Copyright Relia. All Rights Reserved. Privacy Policy
         </p>
         <ul className="list-inline nav-social">
-          {menuFooter.dataSocial.map((social) => (
-            <li>
+          {menuFooter.dataSocial.map((social, key) => (
+            <li key={key}>
               <a
                 href="https://twitter.com/softwarerelia"
                 className="btn btn-twitter"

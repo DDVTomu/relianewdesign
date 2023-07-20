@@ -7,8 +7,8 @@ import Animation from "@components/common/Animation";
 import Slider from "react-slick";
 const BlogSection = React.memo(({ data = [] }) => {
   const settings = {
-    dots: false,
-    infinite: true,
+    dots: "false",
+    infinite: "true",
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -81,8 +81,8 @@ const BlogSection = React.memo(({ data = [] }) => {
           <button className="solid-button">Read more</button>
         </Link>
       </Animation>
-      <div class="blogs__gradientLeft" bis_skin_checked="1"></div>
-      <div class="blogs__gradientRight" bis_skin_checked="1"></div>
+      <div className="blogs__gradientLeft" bis_skin_checked="1"></div>
+      <div className="blogs__gradientRight" bis_skin_checked="1"></div>
     </div>
   );
 });

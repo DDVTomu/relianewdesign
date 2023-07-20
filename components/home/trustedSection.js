@@ -10,8 +10,8 @@ const TrustedSection = React.memo(() => (
           <p>enterprises and high-growth startups worldwide.</p>
         </div>
         <div className="trusted-row-img">
-          {dataTrusted.map((trust) => (
-            <ExportedImage src={trust.image} width={150} height={50} />
+          {dataTrusted.map((trust, key) => (
+            <ExportedImage key={key} src={trust.image} width={150} height={50} />
           ))}
         </div>
       </div>
