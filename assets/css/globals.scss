@@ -1000,9 +1000,16 @@ pre tt:after {
       border: 0;
       padding: 0;
       border-radius: 0;
-
+      & span{
+        display: block!important;
+        background-color: #6248b1 !important;
+        border-radius: 100px !important;
+      }
       &:hover {
         transform: translateY(-5px);
+        box-shadow: 0px 7px 0px 0px #6248b1, 0px 0px 0px 0px rgba(0, 0, 0, 0.14),
+          0px 14px 11px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 100px;
 
         svg path {
           fill: #e84118;
@@ -2258,7 +2265,7 @@ pre tt:after {
         }
 
         .item__title {
-          color: #e84118;
+          color: #8f69ff;
         }
       }
     }
@@ -6390,5 +6397,9 @@ label {
     &::before {
       background-color: transparent;
     }
+  }
+
+  .nav-link {
+    line-height: normal;
   }
 }
