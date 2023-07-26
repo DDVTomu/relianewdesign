@@ -40,7 +40,7 @@ const BlogSection = React.memo(({ data = [] }) => {
       </div>
       <Slider className="blogs__list" {...settings}>
         {data.map((blog, index) => (
-          <Animation className="item" key={index}>
+          <div className="item" key={index}>
             <a href={`/blog/${blog.attributes.slug}`} key={index}>
               <div className="item__thumb">
                 {blog.attributes.thumnail.data.attributes.formats.small && (
@@ -73,7 +73,7 @@ const BlogSection = React.memo(({ data = [] }) => {
                 }}
               ></div>
             </a>
-          </Animation>
+          </div>
         ))}
       </Slider>
       <Animation className="blogs__more">
