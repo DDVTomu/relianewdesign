@@ -178,10 +178,10 @@ const IntroSection = React.memo(() => {
                   </p>
                 </div>
                 <div className="intro-section-desc-col">
-                  <h3>Focussed</h3>
+                  <h3>Focused</h3>
                   <p>
-                    Our core principles of quality, authenticity and agility to
-                    ensure successful project execution.
+                    Deep Domain Experts Robust Architecture Flawless Design
+                    Effective Code Wider Technology Stacks
                   </p>
                 </div>
                 <div className="intro-section-desc-col">

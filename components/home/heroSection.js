@@ -89,7 +89,7 @@ const HeroSection = React.memo(() => {
           <p>
             We have been sharing the goal with various business owners by
             leveraging innovative technologies to transform their business. We
-            build partnership, just not design or code.
+            build partnership, not just a code or design.
           </p>
           <div className="hero-section-button">
             <button className="solid-button">Start a Project</button>
