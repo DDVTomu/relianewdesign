@@ -6,7 +6,7 @@ const AwardSection = React.memo(() => (
   <div className="section awards">
     <div className="container">
       <div className="box-heading">
-        <Animation>
+        <div>
           <h2 className="awards-title">
             <ExportedImage
               src="/images/award_logo.png"
@@ -15,11 +15,11 @@ const AwardSection = React.memo(() => (
             />
             Awards & Recognition
           </h2>
-        </Animation>
+        </div>
       </div>
       <div className="awards__list">
         {dataAward.map((award, key) => (
-          <Animation
+          <div
             key={key}
             className="item"
             style={{
@@ -39,7 +39,7 @@ const AwardSection = React.memo(() => (
             <div className="item__bootom">
               <p>{award.desc}</p>
             </div>
-          </Animation>
+          </div>
         ))}
 
         {/* <Animation className="item">

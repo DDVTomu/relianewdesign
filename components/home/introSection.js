@@ -165,7 +165,7 @@ const IntroSection = React.memo(() => {
             </ul>
           </Animation>
         </div> */}
-        <Animation>
+        <div>
           <div className="intro-section-row">
             <div className="intro-section-desc">
               <h2>At Relia we are</h2>
@@ -227,7 +227,7 @@ const IntroSection = React.memo(() => {
               </div>
             </div>
           </div>
-        </Animation>
+        </div>
       </div>
     </div>
   );

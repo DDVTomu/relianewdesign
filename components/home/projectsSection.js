@@ -13,7 +13,7 @@ const ProjectsSection = React.memo(({ data = [] }) => {
             <div className="projects-section__block" key={index}>
               <div className={`block-project`}>
                 <div className="block-project__images">
-                  <Animation>
+                  <div>
                     <div className="background">
                       {project.attributes.projectImage.data && (
                         <Image
@@ -28,9 +28,9 @@ const ProjectsSection = React.memo(({ data = [] }) => {
                         />
                       )}
                     </div>
-                  </Animation>
+                  </div>
                 </div>
-                <Animation className="block-project__content">
+                <div className="block-project__content">
                   <a href={project.attributes.slug}>
                     <h2>{project.attributes.portfolioName}</h2>
                   </a>
@@ -39,15 +39,15 @@ const ProjectsSection = React.memo(({ data = [] }) => {
                       <span key={index}>{val.tagName}, </span>
                     ))}
                   </div>
-                </Animation>
+                </div>
               </div>
             </div>
           ))}
           <div className="projects-section__block  empty">
-            <Animation className="background">
+            <div className="background">
               <p>See more of our works on our portfolio vault.</p>
               <button className="solid-button">See our Portfolio</button>
-            </Animation>
+            </div>
           </div>
         </div>
       </div>

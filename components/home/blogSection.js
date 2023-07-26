@@ -31,12 +31,12 @@ const BlogSection = React.memo(({ data = [] }) => {
   return (
     <div className="section blogs">
       <div className="container">
-        <Animation>
-          <h2 className="hdg-lv2">
-            Blog
-          </h2>
-          <p className="hdg-lv2-sub">We document our process and learnings with new articles every week.</p>
-        </Animation>
+        <div>
+          <h2 className="hdg-lv2">Blog</h2>
+          <p className="hdg-lv2-sub">
+            We document our process and learnings with new articles every week.
+          </p>
+        </div>
       </div>
       <Slider className="blogs__list" {...settings}>
         {data.map((blog, index) => (
@@ -76,11 +76,11 @@ const BlogSection = React.memo(({ data = [] }) => {
           </div>
         ))}
       </Slider>
-      <Animation className="blogs__more">
+      <div className="blogs__more">
         <Link href="/blog">
           <button className="solid-button">Read more</button>
         </Link>
-      </Animation>
+      </div>
       <div className="blogs__gradientLeft" bis_skin_checked="1"></div>
       <div className="blogs__gradientRight" bis_skin_checked="1"></div>
     </div>

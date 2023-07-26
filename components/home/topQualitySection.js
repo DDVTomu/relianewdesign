@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 import ExportedImage from "next/image";
-import { ButtonView } from "@components/common/button"
-import Animation from "@components/common/Animation"
+import { ButtonView } from "@components/common/button";
+import Animation from "@components/common/Animation";
 
 const TopQualitySection = React.memo(() => (
   <div className="section top-quality">
@@ -17,7 +17,7 @@ const TopQualitySection = React.memo(() => (
     </h2>
     <div className="container">
       <div className="top-quality__wrap">
-        <Animation className="top-quality__col">
+        <div className="top-quality__col">
           <ExportedImage
             src="/images/home/logo-clutch.png"
             width={282}
@@ -26,14 +26,17 @@ const TopQualitySection = React.memo(() => (
             loading="lazy"
             alt="Clutch"
           />
-          <h5>Relia Software is Named in Top Vietnam Staff Augmentation Services by Clutch</h5>
+          <h5>
+            Relia Software is Named in Top Vietnam Staff Augmentation Services
+            by Clutch
+          </h5>
           <ButtonView
             external
             to="https://clutch.co/vn/it-services/staff-augmentation/leaders-matrix"
             title="View review"
           />
-        </Animation>
-        <Animation className="top-quality__col">
+        </div>
+        <div className="top-quality__col">
           <ExportedImage
             src="/images/home/logo-wadline.png"
             width={372}
@@ -48,8 +51,8 @@ const TopQualitySection = React.memo(() => (
             to="https://wadline.com/mobile/vn"
             title="View review"
           />
-        </Animation>
-        <Animation className="top-quality__col">
+        </div>
+        <div className="top-quality__col">
           <ExportedImage
             src="/images/home/logo-manifest.png"
             width={236}
@@ -64,8 +67,8 @@ const TopQualitySection = React.memo(() => (
             to="https://themanifest.com/vn/software-development/go/companies"
             title="View review"
           />
-        </Animation>
-        <Animation className="top-quality__col">
+        </div>
+        <div className="top-quality__col">
           <ExportedImage
             src="/images/home/logo-goodfirms.png"
             width={400}
@@ -80,9 +83,9 @@ const TopQualitySection = React.memo(() => (
             external
             title="View review"
           />
-        </Animation>
+        </div>
       </div>
     </div>
   </div>
-))
-export default TopQualitySection
+));
+export default TopQualitySection;

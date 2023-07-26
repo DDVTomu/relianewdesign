@@ -32,12 +32,12 @@ class ClientSection extends React.Component {
               </div>
               <div className="box-heading__row_head">
                 {" "}
-                <Animation>
+                <div>
                   <h2 className="hdg-lv2">
                     We work with clients from all over the world
                   </h2>
-                </Animation>
-                <Animation className="hdg-lv2-sub">
+                </div>
+                <div className="hdg-lv2-sub">
                   {/* On average, only 43% of respondents have a high level of trust
                   in institutions across industries. Worse, nearly 40% plan to
                   switch to the competition or digital startup due to trust
@@ -46,7 +46,7 @@ class ClientSection extends React.Component {
                   trust list. */}
                   United States, India, Indonesia, Singapore, Vietnam and many
                   more...
-                </Animation>
+                </div>
               </div>
             </div>
           </div>

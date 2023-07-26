@@ -14,20 +14,33 @@ const BusinessSection = () => {
         </p>
         <div className="business-row">
           <div className="business-row-col">
-            <h3>10+</h3>
-            <p>years of experience</p>
+            <div className="business-row-col-shape"></div>
+            <div className="business-row-col-content">
+              <h3>10+</h3>
+              <p>years of experience</p>
+            </div>
           </div>
           <div className="business-row-col">
-            <h3>5.0</h3>
-            <p>rating on Clutch</p>
+            <div className="business-row-col-shape"></div>
+            <div className="business-row-col-content">
+              <h3>5.0</h3>
+              <p>rating on Clutch</p>
+            </div>
           </div>
           <div className="business-row-col">
-            <h3>300+</h3>
-            <p>finished projects</p>
+            <div className="business-row-col-shape"></div>
+            <div className="business-row-col-content">
+              <h3>300+</h3>
+              <p>finished projects</p>
+            </div>
           </div>
           <div className="business-row-col">
-            <h3>50%</h3>
-            <p>returning customers</p>
+            <div className="business-row-col-shape"></div>
+            <div className="business-row-col-content">
+              <div></div>
+              <h3>50%</h3>
+              <p>returning customers</p>
+            </div>
           </div>
         </div>
       </div>

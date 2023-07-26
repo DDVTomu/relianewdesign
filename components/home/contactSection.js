@@ -39,7 +39,7 @@ const ContactForm = ({
               alt="Work word"
               priority
             /> */}
-            <Animation>
+            <div>
               <h2 className="hdg-lv2">Let’s build great things together</h2>
               <div className="contact__block__map_info">
                 <label>Our Location</label>
@@ -77,7 +77,7 @@ const ContactForm = ({
                   ))}
                 </ul>
               </div>
-            </Animation>
+            </div>
           </div>
           <div className="contact__block__form">
             <form

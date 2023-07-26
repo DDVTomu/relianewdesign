@@ -7,6 +7,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { GlobalContext } from "./_app";
 
+// import HeroSection from "@components/home/heroSection";
+// import IntroSection from "@components/home/introSection";
+// import ProjectsSection from "@components/home/projectsSection";
+// import ClientSection from "@components/home/clientSection";
+// import AwardSection from "@components/home/awardSection";
+// import BlogSection from "@components/home/blogSection";
+// import ContactSection from "@components/home/contactSection";
+// import TrustedSection from "@components/home/trustedSection";
+// import BusinessSection from "@components/home/businessSection";
+
 const HeroSection = dynamic(() => import("@components/home/heroSection"));
 const IntroSection = dynamic(() => import("@components/home/introSection"));
 const ProjectsSection = dynamic(() =>

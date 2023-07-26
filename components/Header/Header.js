@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import ExportedImage from "next/image";
 import { withRouter } from "next/router";
-import SearchBTN from "@components/common/SearchBTN";
 import { fetchAPI } from "lib/api";
 import _ from "lodash";
 // this is only active when the location pathname is exactly
@@ -69,19 +68,6 @@ class Header extends React.Component {
 
   componentDidMount() {
     window.addEventListener("scroll", this.scrollCheck);
-    async function getData() {
-      const blogs = await Promise.all([
-        fetchAPI(
-          "blogs?pagination[pageSize]=100&populate=*&sort[0]=publishedAt:DESC"
-        ),
-      ]);
-      const data = blogs?.data ?? [];
-      if (!data) {
-        return data;
-      }
-    }
-
-    this.setState({ blogData: getData() });
   }
 
   componentWillUnmount() {
@@ -97,42 +83,6 @@ class Header extends React.Component {
   };
 
   render() {
-    function groupByCategory(data = []) {
-      if (!data?.length) {
-        return [];
-      }
-      const formattedData = data.map((item) => {
-        const attributes = item.attributes;
-        const category = attributes?.category?.data?.attributes?.name;
-        const thumnail = attributes?.thumnail?.data?.attributes?.url;
-        const thumnailWidth = attributes?.thumnail?.data?.attributes?.width;
-        const thumnailHeight = attributes?.thumnail?.data?.attributes?.height;
-        const tags = attributes?.tags?.data?.map?.((tag) => {
-          return tag?.attributes?.name;
-        });
-
-        return {
-          ...attributes,
-          category,
-          tags,
-          thumnail,
-          thumnailWidth,
-          thumnailHeight,
-        };
-      });
-      return _.map(
-        _.groupBy(formattedData, (blog) => blog.category),
-        (blogs, category) => {
-          return {
-            expert: category,
-            items: blogs,
-          };
-        }
-      );
-    }
-
-    const blogsData = groupByCategory(this.state.blogData);
-    const data = this.state.blogData;
     // console.log(data);
     const { siteTitle, menuLinks, className, props, router } = this.props;
     const { active } = this.state;

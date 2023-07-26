@@ -4,7 +4,7 @@ import FooterNav from "components/common/FooterNav";
 import { GlobalContext } from "pages/_app";
 import Link from "next/link";
 import ExportedImage from "next/image";
-import Animation from "components/common/Animation";
+
 import menuFooter from "./menuFooter";
 // import IconTwitter from "@components/common/Icon/IconTwitter";
 // import IconFacebook from "@components/common/Icon/IconFacebook";
@@ -28,9 +28,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="footer__row">
-          <Animation className="col col-contact">
+          <div className="col col-contact">
             <h5 className="col__title">Keep in touch</h5>
-            <Animation className="col col-contact">
+            <div className="col col-contact">
               <h6>Viet Nam</h6>
               <p>
                 629 Nguyen Kiem, Ward 9, Phu Nhuan District, Ho Chi Minh City,
@@ -38,12 +38,12 @@ const Footer = () => {
                 <br />
                 Phone: +84 35 9208574
               </p>
-            </Animation>
-            <Animation className="col col-nav">
+            </div>
+            <div className="col col-nav">
               <h6 style={{ marginTop: "15px" }}>USA</h6>
               <p>Paulina St Chicago, IL 60622</p>
-            </Animation>
-            <Animation className="col col-nav">
+            </div>
+            <div className="col col-nav">
               <h6 style={{ marginTop: "15px" }}>Canada</h6>
               <p>
                 880 Westlock Rd Mississauga ON L5C 1K6 Canada
@@ -60,15 +60,15 @@ const Footer = () => {
                   alt={siteName || "Relia Software"}
                 />
               </h5>
-            </Animation>
-          </Animation>
-          <Animation className="col col-nav">
+            </div>
+          </div>
+          <div className="col col-nav">
             <h5 className="col__title">Company</h5>
             <div className="nav-footer">
               <FooterNav menus={menuFooter.company} />
             </div>
-          </Animation>
-          <Animation className="col col-nav">
+          </div>
+          <div className="col col-nav">
             <h5 className="col__title">Services</h5>
             <div className="nav-footer">
               <FooterNav menus={menuFooter.services} />
@@ -78,7 +78,7 @@ const Footer = () => {
             <div className="nav-footer">
               <FooterNav menus={menuFooter.industries} />
             </div>
-          </Animation>
+          </div>
         </div>
         <div className="footer__row"></div>
       </div>
