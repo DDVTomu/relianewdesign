@@ -1000,19 +1000,10 @@ pre tt:after {
       border: 0;
       padding: 0;
       border-radius: 0;
-      & span{
-        display: block!important;
-        background-color: #6248b1 !important;
-        border-radius: 100px !important;
-      }
       &:hover {
         transform: translateY(-5px);
-        box-shadow: 0px 7px 0px 0px #6248b1, 0px 0px 0px 0px rgba(0, 0, 0, 0.14),
-          0px 14px 11px 1px rgba(0, 0, 0, 0.2);
-        border-radius: 100px;
-
         svg path {
-          fill: #e84118;
+          fill: #6248b1;
         }
       }
 
@@ -2276,7 +2267,13 @@ pre tt:after {
 
     .slick-prev,
     .slick-next {
+      transition: all 0.3s;
       z-index: 30;
+      &:hover{
+        transform: translateY(-15px);
+        box-shadow: 15px 22px 0px 15px #6248b1, 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 14px 27px 12px 14px rgba(0, 0, 0, 0.2);
+        border-radius: 100px;
+      }
       @media only screen and (max-width: 767px) {
         top: 420px;
       }
@@ -2454,6 +2451,28 @@ pre tt:after {
           }
           & li:not(:first-child) {
             margin-left: 20px !important;
+          }
+        }
+      }
+      & .nav-social {
+        li {
+          a {
+            & span {
+              display: block !important;
+              background-color: #6248b1 !important;
+              border-radius: 100px;
+            }
+            &:hover {
+              transform: translateY(-5px);
+              box-shadow: 0px 7px 0px 0px #6248b1,
+                0px 0px 0px 0px rgba(0, 0, 0, 0.14),
+                0px 14px 11px 1px rgba(0, 0, 0, 0.2);
+              border-radius: 100px;
+
+              svg path {
+                fill: #e84118;
+              }
+            }
           }
         }
       }
