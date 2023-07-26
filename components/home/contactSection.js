@@ -44,8 +44,8 @@ const ContactForm = ({
               <div className="contact__block__map_info">
                 <label>Our Location</label>
                 <p>
-                  Golden Bee Building, Nguyen Kiem Street, Phu Nhuan District,
-                  Ho Chi Minh City, Vietnam.
+                  629 Nguyen Kiem Street, Phu Nhuan District, Ho Chi Minh City,
+                  Vietnam.
                 </p>
               </div>
               <div className="contact__block__map_info">
