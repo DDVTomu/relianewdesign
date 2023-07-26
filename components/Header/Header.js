@@ -180,9 +180,9 @@ class Header extends React.Component {
                       </a>
                     </li>
                   ))}
-                  <li className="nav-item">
-                    {/* <SearchBTN data={blogs} blogs={allBlogs} /> */}
-                  </li>
+                  {/* <li className="nav-item">
+                    <SearchBTN data={blogs} blogs={allBlogs} />
+                  </li> */}
                   <li className="nav-item">
                     <a className="nav-link solid-button" href="/contact">
                       <b>Contact</b>
