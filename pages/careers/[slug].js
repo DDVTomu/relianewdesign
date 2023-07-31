@@ -32,7 +32,7 @@ function HeadingRenderer(props) {
 
 const CareerDetailPage = ({ career = {} }) => {
   const seo = {
-    metaTitle: career.title || "Careers",
+    metaTitle: career.seoTitle || `Careers: ${career.title} | Relia Software`,
     metaDescription: career.description || "Careers",
     article: true,
   };

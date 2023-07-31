@@ -82,9 +82,9 @@ const HeroSection = React.memo(() => {
         </div> */}
         <div className="hero-section hero-section-text">
           <h1>
-            Engineering culture
+            Engineering culture with
             <br />
-            with<span> top talents</span>.
+            <span> top talents</span>
           </h1>
           <p>
             We have been sharing the goal with various business owners by
@@ -97,7 +97,7 @@ const HeroSection = React.memo(() => {
           </div>
         </div>
       </div>
-      <div className="hero-carousel">
+      {/* <div className="hero-carousel">
         <Slider {...settings} className="hero-slider">
           {data.map((portfolio, key) => (
             <div className="hero-slides" key={key}>
@@ -118,7 +118,7 @@ const HeroSection = React.memo(() => {
         </Slider>
         <div className="hero-slider-gradientLeft"></div>
         <div className="hero-slider-gradientRight"></div>
-      </div>
+      </div> */}
     </div>
   );
 });

@@ -180,15 +180,8 @@ const IntroSection = React.memo(() => {
                 <div className="intro-section-desc-col">
                   <h3>Focused</h3>
                   <p>
-                    Deep Domain Experts
-                    <br />
-                    Robust Architecture
-                    <br />
-                    Flawless Design
-                    <br />
-                    Effective Code
-                    <br />
-                    Wider Technology Stacks
+                    Deep Domain Experts, Robust Architecture, Flawless Design,
+                    Effective Code, Wider Technology Stacks
                   </p>
                 </div>
                 <div className="intro-section-desc-col">

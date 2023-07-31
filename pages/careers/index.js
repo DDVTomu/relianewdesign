@@ -36,7 +36,7 @@ function groupByCategory(data = []) {
 
 const CareerPage = ({ careers }) => {
   const seo = {
-    metaTitle: "Careers | Reliasoftware",
+    metaTitle: "Careers | Relia Software",
     metaDescription: "We work with awesome people, reasons to join us!",
     shareImage: ogpImage,
     article: true,

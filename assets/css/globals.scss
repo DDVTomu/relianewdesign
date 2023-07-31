@@ -1141,7 +1141,8 @@ pre tt:after {
     top: 0px;
   }
   .hero-section {
-    padding: 0 370px;
+    // padding: 0 370px;
+    padding: 0 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1154,7 +1155,8 @@ pre tt:after {
     &-text {
       h1 {
         color: #fff;
-        font-size: 48px;
+        // font-size: 48px;
+        font-size: 80px;
         font-family: Inter;
         font-weight: 800;
         letter-spacing: 0.25px;
@@ -1200,6 +1202,7 @@ pre tt:after {
         letter-spacing: 0.25px;
         text-align: center;
         margin-bottom: 30px;
+        font-weight: 200;
       }
 
       .list-inline {
@@ -1334,7 +1337,8 @@ pre tt:after {
     }
   }
   &-desc {
-    width: 700px;
+    // width: 700px;
+    width: 800px;
     text-align: left;
     @media only screen and (max-width: 767px) {
       width: 100%;
@@ -1380,7 +1384,7 @@ pre tt:after {
         color: #636e72;
         font-family: Inter;
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 300;
         line-height: 32px;
         @media only screen and (max-width: 767px) {
           font-size: 18px;
@@ -1571,7 +1575,7 @@ pre tt:after {
       &-desc {
         color: #636e72;
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 300;
       }
     }
   }
@@ -1715,7 +1719,7 @@ pre tt:after {
     & .hdg-lv2-sub {
       color: #636e72;
       font-size: 20px;
-      font-weight: 500;
+      font-weight: 300;
       line-height: 32px;
       padding: 0;
     }
@@ -2092,7 +2096,7 @@ pre tt:after {
     color: #636e72;
     text-align: center;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 32px; /* 160% */
     margin-bottom: 38.25px;
   }
@@ -2232,7 +2236,7 @@ pre tt:after {
       &__text {
         margin-top: 0;
         font-size: 16px;
-        font-weight: normal;
+        font-weight: 300;
         line-height: 1.75;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -2347,7 +2351,7 @@ pre tt:after {
       & p {
         color: #636e72;
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 300;
         line-height: 32px;
         margin: 0;
         @media only screen and (max-width: 767px) {
@@ -6361,7 +6365,7 @@ label {
   &-desc {
     color: #636e72;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 30px;
     margin-bottom: 30px;
   }
