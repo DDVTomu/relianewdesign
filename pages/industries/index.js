@@ -9,12 +9,13 @@ import CountUp from "react-countup";
 import Animation from "@components/common/Animation";
 import ogpImage from "/assets/images/industries/industries01.jpg";
 import indus from "./indus.module.scss";
+import { fetchAPI } from "@lib/api";
 const TrustedSection = dynamic(() => import("@components/home/trustedSection"));
 const ContactSubSection = dynamic(() =>
   import("@components/home/contactSubSection")
 );
 const QuoteSection = dynamic(() => import("@components/home/quoteSection"));
-const IndustriesPage = () => {
+const IndustriesPage = ({ industries }) => {
   const seo = {
     metaTitle: "Industry Expertise",
     metaDescription:
@@ -36,7 +37,7 @@ const IndustriesPage = () => {
             <Animation>
               <h2 className="hdg-lv2">Explore Other Industries</h2>
             </Animation>
-            <ListIndustries />
+            <ListIndustries data={industries} />
           </div>
         </section>
         <QuoteSection
@@ -49,4 +50,21 @@ const IndustriesPage = () => {
     </Layout>
   );
 };
+
+export async function getServerSideProps({ params }) {
+  const industries = await fetchAPI(
+    "industries?pagination[pageSize]=100&populate=*,metaImage,&sort[0]=publishedAt:DESC"
+  );
+  const data = industries?.data ?? [];
+  if (!data) {
+    return {
+      props: { industries: [] },
+    };
+  }
+
+  return {
+    props: { industries: data },
+  };
+}
+
 export default IndustriesPage;
