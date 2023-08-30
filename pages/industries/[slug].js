@@ -15,16 +15,16 @@ import { fetchAPI } from "@lib/api";
 const IndustriesPage = ({ industry }) => {
   useEffect(() => {
     const container = document.querySelector(".list-operations");
-    const items = container.querySelectorAll(".list-operations__col");
+    const items = container?.querySelectorAll(".list-operations__col");
     const maxColumns = 3;
 
     function updateColumns() {
-      const itemCount = items.length;
+      const itemCount = items?.length;
       const columns = Math.min(itemCount, maxColumns);
       const itemWidth =
         columns > 0 ? `calc((100% - 20px * 2 ) / ${columns})` : `100%`;
 
-      items.forEach((item) => {
+      items?.forEach((item) => {
         item.style.width = itemWidth;
       });
     }
