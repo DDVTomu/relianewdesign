@@ -1,0 +1,25 @@
+.banner {
+  height: 476px;
+  * {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  img {
+    object-fit: cover;
+  }
+}
+.hero {
+  background: #fff;
+  h1 {
+    color: #8f69ff;
+  }
+}
+.bg {
+  padding: 60px 0;
+  margin-top: 60px;
+  .list-operations {
+    h5 {
+      text-align: center;
+    }
+  }
+}

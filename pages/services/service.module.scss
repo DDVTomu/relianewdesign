@@ -1,0 +1,53 @@
+.detail {
+  background: #e6e6e6;
+  padding: 10px 0;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  &_itm {
+    padding: 20px;
+    background: #fff;
+    width: calc((100% - 20px) / 2);
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    display: inline-flex;
+    &:nth-child(2n + 1) {
+      margin-left: 0;
+    }
+  }
+}
+.content {
+  padding: 60px 0;
+}
+.capabilities {
+  padding: 60px 0;
+}
+.why {
+  padding: 20px 0 60px;
+}
+.caps {
+  display: flex;
+  margin-left: 0;
+  list-style: none;
+  flex-wrap: wrap;
+  counter-reset: myCounter;
+  li {
+    width: calc((100% - 60px) / 4);
+    margin-left: 20px;
+    color: #8f69ff;
+    background: #fff;
+    padding: 10px 20px;
+    border: 1px solid #e7daed;
+    border-radius: 8px;
+    counter-increment: myCounter;
+    &:nth-child(4n + 1) {
+      margin-left: 0;
+    }
+    &::before {
+      content: "#" counter(myCounter);
+      padding-right: 5px;
+    }
+  }
+}

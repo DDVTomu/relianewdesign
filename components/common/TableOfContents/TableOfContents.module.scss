@@ -1,0 +1,75 @@
+.nav {
+  h2 {
+    scroll-margin-top: 16px;
+  }
+
+  /* Safari-only */
+  @supports (-webkit-hyphens:none) {
+    h2 {
+      padding-top: 16px;
+      margin-top: -16px;
+    }
+  }
+
+  position: sticky;
+  position: -webkit-sticky;
+  /* For Safari */
+  top: 8vw;
+  /* How far down the page you want your ToC to live */
+
+  /* Give table of contents a scrollbar */
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+  &__divide_line {
+    width: 58px;
+    height: 1px;
+    left: 0px;
+    top: 36.89px;
+    background: rgba(112, 112, 112, 0.35);
+    margin: 25px 0px;
+  }
+
+  &__link_table {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height, or 120% */
+    color: #7c7d81;
+    margin-bottom: 15.11px;
+    cursor: pointer;
+
+  }
+  &__link_table_active{
+    color: rgb(72, 105, 134);
+    font-weight: 600;
+  }
+
+  &__head {
+    margin: 0 !important;
+    font-family: "Inter" !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 17px !important;
+    display: flex !important;
+    align-items: center !important;
+    text-transform: uppercase !important;
+    color: #000000 !important;
+  }
+
+  &__share {
+    margin-top: 19px !important;
+    font-family: "Inter" !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 17px !important;
+    /* identical to box height, or 141% */
+    color: #000000 !important;
+  }
+}
