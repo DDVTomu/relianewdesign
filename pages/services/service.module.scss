@@ -13,8 +13,25 @@
     margin-bottom: 20px;
     border-radius: 12px;
     display: inline-flex;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      margin-left: 0;
+    }
     &:nth-child(2n + 1) {
       margin-left: 0;
+    }
+    &_img {
+      width: 200px;
+    }
+    &_ctn {
+      padding-left: 20px;
+      & > p:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &_title {
+      font-weight: bold;
+      margin-bottom: 10px;
     }
   }
 }
@@ -26,6 +43,24 @@
 }
 .why {
   padding: 20px 0 60px;
+  &_slider {
+    &_col {
+      padding: 0 20px;
+      &_pt {
+        padding-top: 40px;
+        @media screen and (max-width: 767px) {
+          padding-top: 0;
+        }
+      }
+    }
+    &_inner {
+      background-color: #fff;
+      padding: 20px;
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 .caps {
   display: flex;
@@ -42,7 +77,17 @@
     border: 1px solid #e7daed;
     border-radius: 8px;
     counter-increment: myCounter;
+    @media screen and (max-width: 767px) {
+      width: calc((100% - 30px) / 2);
+      margin-left: 15px;
+    }
     &:nth-child(4n + 1) {
+      margin-left: 0;
+      @media screen and (max-width: 767px) {
+        margin-left: 0;
+      }
+    }
+    &:nth-child(2n + 1) {
       margin-left: 0;
     }
     &::before {
