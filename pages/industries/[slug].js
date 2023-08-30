@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "next/link";
 import PageTitle from "@components/pageTitle";
 import Layout from "@components/common/layout";
@@ -12,35 +12,26 @@ import ogpImage from "assets/images/industries/fintech-app-development.jpg";
 import indus from "./indus.module.scss";
 import { fetchAPI } from "@lib/api";
 
-function convertIndustryData(item, isHasAuthor = false) {
-  const attributes = item?.attributes;
-  const category = attributes?.category?.data?.attributes?.name;
-  const thumnail = attributes?.thumnail?.data?.attributes;
-  const author = isHasAuthor
-    ? {
-        name: attributes?.author?.data?.attributes?.name,
-        position: attributes?.author?.data?.attributes?.position,
-        avatar:
-          attributes?.author?.data?.attributes?.avatar?.data?.attributes?.url,
-      }
-    : {};
-  const tags = attributes?.tags?.data?.map?.((tag) => {
-    return { name: tag?.attributes?.name, slug: tag?.attributes?.slug };
-  });
-  const slug = attributes?.slug;
-  const index = item?.id;
-  return {
-    ...attributes,
-    category,
-    tags,
-    thumnail,
-    author,
-    slug,
-    index,
-  };
-}
-
 const IndustriesPage = ({ industry }) => {
+  useEffect(() => {
+    const container = document.querySelector(".list-operations");
+    const items = container.querySelectorAll(".list-operations__col");
+    const maxColumns = 3;
+
+    function updateColumns() {
+      const itemCount = items.length;
+      const columns = Math.min(itemCount, maxColumns);
+      const itemWidth =
+        columns > 0 ? `calc((100% - 40px / ${columns} ) / ${columns})` : `100%`;
+
+      items.forEach((item) => {
+        item.style.width = itemWidth;
+      });
+    }
+
+    updateColumns();
+  }, []);
+
   const keywords = [
     ...industry?.attributes.keywords.data.map(
       (keyword) => keyword?.attributes.keyword
@@ -137,7 +128,16 @@ const IndustriesPage = ({ industry }) => {
               return (
                 <Animation className="back-office sec-bg">
                   <div className="container">
-                    <h2 className="hdg-lv2">{section.Title}</h2>
+                    {section.Title ? (
+                      <h2 className="hdg-lv2">{section.Title}</h2>
+                    ) : (
+                      ""
+                    )}
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: section.Description,
+                      }}
+                    />
                     <div className="list-operations">
                       {section.ListItem?.map((list) => {
                         const updatedDescription = list.Description.replace(

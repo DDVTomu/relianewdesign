@@ -3,7 +3,7 @@ import { ButtonView } from "@components/common/button";
 import Image from "@components/common/Image";
 import Truncate from "react-truncate";
 import Animation from "@components/common/Animation";
-import * as projects from "./projects.module.scss";
+import projects from "./projects.module.scss";
 const ProjectsSection = React.memo(({ data = [] }) => {
   return (
     <div className={`section ${projects.section}`}>
@@ -22,10 +22,7 @@ const ProjectsSection = React.memo(({ data = [] }) => {
                           }
                           width={350}
                           height={250}
-                          alt={
-                            project.attributes.projectImage.projectName ||
-                            project.attributes.portfolioName
-                          }
+                          alt={project.attributes.projectImage.projectName || project.attributes.portfolioName}
                           className="background-img"
                           priority
                         />

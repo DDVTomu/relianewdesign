@@ -12,13 +12,16 @@ import PageTitle from "@components/pageTitle";
 const ContactSubSection = dynamic(() =>
   import("@components/home/contactSubSection")
 );
-const TechStack = ({ works }) => {
+const TechStack = ({ tech }) => {
+  tech?.map((data) => console.log(data));
   const seo = {
-    metaTitle: works.metaTitle || "Tech Stack",
-    metaDescription: works.description || "Tech Stack",
+    metaTitle: "Tech Stack | Relia Software",
+    metaDescription: "Tech Stack",
     // shareImage: article.image,
     article: true,
   };
+
+  const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_SERVER;
 
   const applications = [
     {
@@ -169,22 +172,27 @@ const TechStack = ({ works }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         style={{
-          backgroundColor: isHover ? `${props.app.color}68` : `#f9f9f9`,
+          backgroundColor: isHover
+            ? `${props.app?.attributes.colorCode}68`
+            : `#f9f9f9`,
         }}
       >
-        <Link href={props.app.href || "#"}>
+        <Link href={`/tech-stack/${props.app?.attributes.slug}` || "#"}>
           <a>
             <ExportedImage
-              src={props.app.img}
+              alt={props.app?.attributes.Icon.data?.attributes.alternativeText}
+              src={`${strapiUrl}${props.app?.attributes.Icon.data?.attributes.url}`}
               width={22}
               height={28}
               objectFit="contain"
             />
             <span
               className={styles.apptitle}
-              style={{ color: isHover ? `#fff` : props.app.color }}
+              style={{
+                color: isHover ? `#fff` : props.app?.attributes.colorCode,
+              }}
             >
-              {props.app.title}
+              {props.app.attributes.Tech}
             </span>
           </a>
         </Link>
@@ -207,23 +215,21 @@ const TechStack = ({ works }) => {
       />
       <section className={styles.applications}>
         <div className="container">
-          {/* <div className={styles.applications__header}>
-            <h2>
-              Our choice of tech stack is motivated by application architecture
-              for feasible maintenance.
-            </h2>
-          </div> */}
           <div className={styles.applications__apps}>
-            {applications.map((application, index) => (
-              <div key={index}>
-                <h2>{application.title}</h2>
-                <ul className={styles.applications__list}>
-                  {application.apps.map((app, index) => (
-                    <ListApp key={index} app={app} />
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {tech?.map((application, index) =>
+              application.attributes.Tech.data.length > 0 ? (
+                <div key={index}>
+                  <h2>Our {application.attributes.Category} Tech Stack</h2>
+                  <ul className={styles.applications__list}>
+                    {application.attributes.Tech.data?.map((app, index) => (
+                      <ListApp key={index} app={app} />
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                ""
+              )
+            )}
           </div>
         </div>
       </section>
@@ -233,11 +239,17 @@ const TechStack = ({ works }) => {
 };
 
 export async function getStaticProps({ params }) {
-  const works = await fetchAPI("/page-work");
+  const tech = await fetchAPI("techstack-categories?populate=*,Tech.Icon");
+
+  const data = tech?.data ?? [];
+  if (!data) {
+    return {
+      props: { tech: [] },
+    };
+  }
 
   return {
-    props: { works },
-    revalidate: 1,
+    props: { tech: data },
   };
 }
 
