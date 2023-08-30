@@ -50,7 +50,7 @@ const IndustriesPage = ({ industry }) => {
       const itemCount = items.length;
       const columns = Math.min(itemCount, maxColumns);
       const itemWidth =
-        columns > 0 ? `calc((100% - 40px / ${columns} ) / ${columns})` : `100%`;
+        columns > 0 ? `calc((100% - 20px * 2 ) / ${columns})` : `100%`;
 
       items.forEach((item) => {
         item.style.width = itemWidth;
