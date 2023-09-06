@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://reliasoftware.com
+
+# Sitemaps
+Sitemap: https://reliasoftware.com/sitemap.xml
+Sitemap: https://reliasoftware.com/server-sitemap.xml
