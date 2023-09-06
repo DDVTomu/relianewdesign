@@ -9,6 +9,7 @@ const QuoteSection = (props) => {
             src="/images/icon/logo-textless.svg"
             width={214}
             height={180}
+            alt={props.title ? props.title : "Relia"}
           />
           <div className="content">
             <h2>{props.title ? props.title : "Quote Here"}</h2>

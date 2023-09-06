@@ -22,7 +22,7 @@ const ListIndustries = ({ data = [] }) => {
               layout="intrinsic"
               objectFit="cover"
               loading="eager"
-              alt={item.attributes.metaImage.data?.attributes.alternativeText}
+              alt={item.attributes.metaImage.data?.attributes.alternativeText || item?.attributes.Title}
               src={`${strapiUrl}${item.attributes.metaImage.data?.attributes.url}`}
               className="img"
             />

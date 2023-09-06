@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { unified } from "unified";
+import React from "react";
 import { fetchAPI } from "lib/api";
 import Layout from "@components/common/layout";
 import Seo from "@components/seo";
-import { ButtonView } from "@components/common/button";
 import styles from "./inner.module.scss";
-import ExportedImage from "next/image";
 import CloudImg from "@components/common/Image";
-import ReactMarkdown from "react-markdown";
-import Link from "next/link";
 import PorfolioReadMore from "@components/common/PortfolioReadMore/PortfolioReadMore";
 import PageTitle from "@components/pageTitle";
 import QuoteSection from "@components/home/quoteSection";
@@ -62,9 +57,6 @@ const PortfolioDetailPage = ({ portfolio = {}, portfolios }) => {
         >
           <div className="container">
             <h2>CHALLENGES</h2>
-            {/* <ReactMarkdown components={{ h2: HeadingRenderer }}>
-              {portfolio[0].attributes.Challenges}
-            </ReactMarkdown> */}
             <div
               dangerouslySetInnerHTML={{
                 __html: portfolio[0].attributes.Challenges,
@@ -81,12 +73,6 @@ const PortfolioDetailPage = ({ portfolio = {}, portfolios }) => {
         >
           <div className="container">
             <h2>SCOPE OF WORK</h2>
-            {/* Google APAC has more than 5000 ad partners in the South-East Asian
-            market. These partners spend over $2B+ per year on Google ads to
-            generate leads. */}
-            {/* <ReactMarkdown components={{ h2: HeadingRenderer }}>
-              {portfolio[0].attributes.scopeOfWork}
-            </ReactMarkdown> */}
             <div
               dangerouslySetInnerHTML={{
                 __html: portfolio[0].attributes.scopeOfWork,
@@ -103,9 +89,6 @@ const PortfolioDetailPage = ({ portfolio = {}, portfolios }) => {
         >
           <div className="container">
             <h2>SOLUTION</h2>
-            {/* <ReactMarkdown components={{ h2: HeadingRenderer }}>
-              {portfolio[0].attributes.designAndDevelopment}
-            </ReactMarkdown> */}
             <div
               dangerouslySetInnerHTML={{
                 __html: portfolio[0].attributes.designAndDevelopment,
@@ -123,9 +106,6 @@ const PortfolioDetailPage = ({ portfolio = {}, portfolios }) => {
         >
           <div className="container">
             <h2>RESULTS & IMPACT</h2>
-            {/* <ReactMarkdown components={{ h2: HeadingRenderer }}>
-              {portfolio[0].attributes.resultAndImpact}
-            </ReactMarkdown> */}
             <div
               dangerouslySetInnerHTML={{
                 __html: portfolio[0].attributes.resultAndImpact,
@@ -178,61 +158,6 @@ const PortfolioDetailPage = ({ portfolio = {}, portfolios }) => {
         ""
       )}
       {portfolio[0].attributes.customerQuote ? (
-        // <section className={`${styles.portfolio_content__quote}`}>
-        //   <div className="container">
-        //     <div className={`${styles.portfolio_content__quote_text}`}>
-        //       <div className={`${styles.portfolio_content__quote_text_comma}`}>
-        //         {portfolio[0].attributes.commaIcon.data ? (
-        //           <CloudImg
-        //             alt="Our team at Mekari"
-        //             src={portfolio[0].attributes.commaIcon.data?.attributes.url}
-        //             style={{ width: "100%" }}
-        //             width={
-        //               portfolio[0].attributes.commaIcon.data?.attributes.width
-        //             }
-        //             height={
-        //               portfolio[0].attributes.commaIcon.data?.attributes.height
-        //             }
-        //           />
-        //         ) : (
-        //           ""
-        //         )}
-        //       </div>
-        //       <p>{portfolio[0].attributes.customerQuote}</p>
-        //     </div>
-        //     <div className={`${styles.portfolio_content__quote_teller}`}>
-        //       <div className={`${styles.portfolio_content__quote_avatar}`}>
-        //         {portfolio[0].attributes.customerImg.data ? (
-        //           <CloudImg
-        //             alt="mekari-avatar"
-        //             src={
-        //               portfolio[0].attributes.customerImg.data?.attributes.url
-        //             }
-        //             width={
-        //               portfolio[0].attributes.customerImg.data?.attributes.width
-        //             }
-        //             height={
-        //               portfolio[0].attributes.customerImg.data?.attributes
-        //                 .height
-        //             }
-        //           />
-        //         ) : (
-        //           ""
-        //         )}
-        //       </div>
-        //       <div>
-        //         <h3
-        //           style={{
-        //             color: portfolio[0].attributes.heroBanner.bannerColor,
-        //           }}
-        //         >
-        //           {portfolio[0].attributes.customerName}
-        //         </h3>
-        //         <p>{portfolio[0].attributes.customerJob}</p>
-        //       </div>
-        //     </div>
-        //   </div>
-        // </section>
         <QuoteSection
           title={portfolio[0].attributes.customerQuote}
           sub={`${portfolio[0].attributes.customerName} - ${portfolio[0].attributes.customerJob}`}
@@ -240,9 +165,6 @@ const PortfolioDetailPage = ({ portfolio = {}, portfolios }) => {
       ) : (
         ""
       )}
-      {/* <section>
-        <div className={`${"container"}`}></div>
-      </section> */}
       <div className={styles.casestudy}>
         <div className={`${styles.casestudy_title} container`}>
           <h2>MORE CASE STUDIES</h2>

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import BlogMain from "@components/common/BlogMain/BlogMain";
 import styles from "./search.module.scss";
 import { useRouter } from "next/router";
-export default function Search({ data = [], blogs = [] }) {
+export default function Search({ data = [], blogs = [], total }) {
   let [value, setValue] = React.useState("");
   const router = useRouter();
   const urlKeyword = router.query;
@@ -53,7 +53,6 @@ export default function Search({ data = [], blogs = [] }) {
 
   const searchBlog = searchArrayByKeyword(data, value);
   const searchBlogBig = searchArrayByKeywordBig(blogs, value);
-
   return (
     <div className="container">
       <input
@@ -64,7 +63,7 @@ export default function Search({ data = [], blogs = [] }) {
         value={value}
         onChange={handleInputChange}
       />
-      <BlogMain expertises={searchBlog} blogs={searchBlogBig} />
+      <BlogMain expertises={searchBlog} blogs={searchBlogBig} total={total} />
     </div>
   );
 }

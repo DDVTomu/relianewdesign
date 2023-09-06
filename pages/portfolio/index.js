@@ -8,7 +8,6 @@ import { ContactSubSection } from "@components/home";
 import styles from "./portfolio.module.scss";
 import PageTitle from "@components/pageTitle";
 const Portfolio = ({ portfolios }) => {
-  console.log(portfolios)
   const seo = {
     metaTitle: portfolios.metaTitle || "Portfolio",
     metaDescription: portfolios.description || "Portfolio",

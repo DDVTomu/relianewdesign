@@ -9,21 +9,7 @@ const BlogReadMore = ({ expertises }) => {
         <h1>Read more articles</h1>
         <div className={styles.expertise__post_grid}>
           {expertises.items.map((item, key) => (
-            <div
-              key={`${key}`}
-              className={styles.expertise__post}
-            >
-              <Link href={`/blog/${item.slug}`} prefetch={false}>
-                <h2>{item.title}</h2>
-              </Link>
-              <div className={styles.expertise__post_tag}>
-                <p>
-                  {item.category}
-                  <span className={styles.expertise__date}>
-                    <FormatDate dateString={item.publishedAt} />
-                  </span>
-                </p>
-              </div>
+            <div key={`${key}`} className={styles.expertise__post}>
               <div className={styles.expertise__featured_img}>
                 <CloudImg
                   src={item.thumnail.url}
@@ -33,8 +19,18 @@ const BlogReadMore = ({ expertises }) => {
                   objectFit="cover"
                 />
               </div>
-
-              <p>{item.description}</p>
+              <Link href={`/blog/${item.slug}`} prefetch={false}>
+                <h2>{item.title}</h2>
+              </Link>
+              <p dangerouslySetInnerHTML={{ __html: item.description }} />
+              <div className={styles.expertise__post_tag}>
+                <p>
+                  {item.category}
+                  <span className={styles.expertise__date}>
+                    <FormatDate dateString={item.publishedAt} />
+                  </span>
+                </p>
+              </div>
             </div>
           ))}
         </div>

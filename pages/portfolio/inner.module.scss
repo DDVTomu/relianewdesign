@@ -370,6 +370,7 @@
       margin-left: 0;
       grid-template-columns: repeat(3, 1fr);
       @media only screen and (max-width: 767px) {
+        display: flex;
         flex-direction: column;
         column-gap: 71px;
         margin-bottom: 90px;

@@ -12,6 +12,7 @@ const AwardSection = React.memo(() => (
               src="/images/award_logo.png"
               width={34}
               height={29}
+              alt="Awards"
             />
             Awards & Recognition
           </h2>
@@ -41,40 +42,6 @@ const AwardSection = React.memo(() => (
             </div>
           </div>
         ))}
-
-        {/* <Animation className="item">
-          <div className="item__top">
-            <h6 className="item__top__title">
-              Top Mobile App Developers Company - GoodFirms
-            </h6>
-            <div className="item__top__image">
-              <a
-                target="_blank"
-                rel="nofollow noopener"
-                href="https://www.goodfirms.co/company/relia-software"
-              >
-                <ExportedImage
-                  src="/images/home/profile-reviews.svg"
-                  width={175}
-                  height={150}
-                  layout="intrinsic"
-                  loading="lazy"
-                  alt="GoodFirms"
-                />
-              </a>
-            </div>
-          </div>
-          <div className="item__bootom">
-            <p>
-              GoodFirms Recognised Relia Software as Top Mobile App Development
-              Company in Vietnam.
-            </p>
-            <p>
-              GoodFirms, a Washington, D.C. based B2B research, ratings and
-              review platform.
-            </p>
-          </div>
-        </Animation> */}
       </div>
     </div>
   </div>

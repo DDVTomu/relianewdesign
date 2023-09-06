@@ -43,6 +43,8 @@ const ServiceDetail = ({ detail }) => {
     shareImage: detail.metaImgShare.data.attributes.url,
     article: true,
   };
+
+  console.log(detail)
   return (
     <Layout>
       <SEO seo={seo} />
@@ -135,14 +137,22 @@ const ServiceDetail = ({ detail }) => {
                     <p>{itm.Content}</p>
                   </Animation>
                   <Animation className="box-media__img">
-                    <Image
-                      src={itm.Image.data.attributes.url}
-                      width={itm.Image.data.attributes.width}
-                      height={itm.Image.data.attributes.height}
+                    {itm.Image.data !== null || itm.Image.data ? <Image
+                      src={itm.Image.data?.attributes.url}
+                      width={itm.Image?.data?.attributes.width}
+                      height={itm.Image?.data?.attributes.height}
                       layout="intrinsic"
                       loading="eager"
                       alt={itm.Title}
-                    />
+                    /> : "" }
+                    {/* <Image
+                      src={itm.Image.data?.attributes.url}
+                      width={itm.Image?.data?.attributes.width}
+                      height={itm.Image?.data?.attributes.height}
+                      layout="intrinsic"
+                      loading="eager"
+                      alt={itm.Title}
+                    /> */}
                   </Animation>
                 </div>
               ))}

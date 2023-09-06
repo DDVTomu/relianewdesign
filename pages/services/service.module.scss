@@ -1,6 +1,9 @@
 .detail {
   background: #e6e6e6;
-  padding: 10px 0;
+  padding: 80px 0 60px;
+  @media screen and (max-width: 767px) {
+    padding: 40px 0 20px;
+  }
 }
 .list {
   display: flex;
@@ -36,13 +39,22 @@
   }
 }
 .content {
-  padding: 60px 0;
+  padding: 80px 0;
+  @media screen and (max-width: 767px) {
+    padding: 40px 0;
+  }
 }
 .capabilities {
-  padding: 60px 0;
+  padding: 80px 0;
+  @media screen and (max-width: 767px) {
+    padding: 40px 0;
+  }
 }
 .why {
-  padding: 20px 0 60px;
+  padding: 80px 0 100px;
+  @media screen and (max-width: 767px) {
+    padding: 40px 0 80px;
+  }
   &_slider {
     &_col {
       padding: 0 20px;
@@ -80,6 +92,10 @@
     @media screen and (max-width: 767px) {
       width: calc((100% - 30px) / 2);
       margin-left: 15px;
+
+      &:nth-child(2n + 1) {
+        margin-left: 0;
+      }
     }
     &:nth-child(4n + 1) {
       margin-left: 0;
@@ -87,9 +103,7 @@
         margin-left: 0;
       }
     }
-    &:nth-child(2n + 1) {
-      margin-left: 0;
-    }
+
     &::before {
       content: "#" counter(myCounter);
       padding-right: 5px;
