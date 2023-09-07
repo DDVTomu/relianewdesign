@@ -176,7 +176,7 @@ const ServiceDetail = ({ detail }) => {
                         return (
                           <div className="container">
                             <div className={service.heading}>
-                              <h2 className={service.header_lv2}>{section.Title}</h2>
+                              <h2 className="hdg-lv2">{section.Title}</h2>
                               <div
                                 dangerouslySetInnerHTML={{
                                   __html: section.Description,
