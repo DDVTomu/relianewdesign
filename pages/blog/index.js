@@ -64,7 +64,7 @@ const Blog = ({ blogs, total, allBlogs }) => {
   );
 };
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   const blogs = await fetchAPI(
     "blogs?pagination[pageSize]=1000&pagination[page]=1&populate=*&sort[0]=publishedAt:DESC"
   );
