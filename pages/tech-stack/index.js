@@ -238,7 +238,7 @@ const TechStack = ({ tech }) => {
   );
 };
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const tech = await fetchAPI("techstack-categories?populate=*,Tech.Icon");
 
   const data = tech?.data ?? [];
