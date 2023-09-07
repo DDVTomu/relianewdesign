@@ -172,7 +172,19 @@ const ServiceDetail = ({ detail }) => {
                           )}
                         </div>
                       </div>)
-
+                      case "service.title-box":
+                        return (
+                          <div className="container">
+                            <div className={service.heading}>
+                              <h2 className={service.header_lv2}>{section.Title}</h2>
+                              <div
+                                dangerouslySetInnerHTML={{
+                                  __html: section.Description,
+                                }}
+                              />
+                            </div>
+                          </div>
+                        );
                     }
 
         })}
@@ -186,7 +198,7 @@ const ServiceDetail = ({ detail }) => {
 export async function getServerSideProps({ params }) {
   const slug = params.slug;
   const populate =
-  "DynamicZone.ServiceList,DynamicZone.ServiceList.Icon,DynamicZone.MainContentList,DynamicZone.MainContentList.Image,DynamicZone.Capabilities,DynamicZone.Capabilities.Text,Summary,DynamicZone.WhyChoose,DynamicZone.WhyChoose.Icon,metaImgShare";
+  "DynamicZone.TitleBox,DynamicZone.ServiceList,DynamicZone.ServiceList.Icon,DynamicZone.MainContentList,DynamicZone.MainContentList.Image,DynamicZone.Capabilities,DynamicZone.Capabilities.Text,Summary,DynamicZone.WhyChoose,DynamicZone.WhyChoose.Icon,metaImgShare";
   const servicesRes = await fetchAPI(
     `services?filters[slug][$eq]=${slug}&populate=*,${populate}`
   );
