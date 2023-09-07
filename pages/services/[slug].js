@@ -136,7 +136,7 @@ const ServiceDetail = ({ detail }) => {
                             section.MainContentList?.map((itm, key) => (
                               <div
                                 className={`box-media ${
-                                  key % 2 === 0 ? "box-media--direct" : ""
+                                  itm.Reverse ? "box-media--direct" : ""
                                 }`}
                                 key={key}
                               >
