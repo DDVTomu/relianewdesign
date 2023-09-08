@@ -4,6 +4,7 @@ import dataSolution from "@components/data/dataSolution";
 import ExportedImage from "@components/common/Image";
 import solution from "./solution.module.scss";
 const SolutionSection = ({ data = [], provides }) => {
+  console.log(data);
   let listServices = [];
   let tempArr = [];
   provides.data.forEach((element) => {
@@ -11,7 +12,7 @@ const SolutionSection = ({ data = [], provides }) => {
     data.data.forEach((itm) => {
       if (
         element.attributes.Name ===
-        itm.attributes.services_provide.data.attributes.Name
+        itm.attributes.services_provide.data?.attributes.Name
       ) {
         tempArr.push({
           service: itm.attributes.Title,

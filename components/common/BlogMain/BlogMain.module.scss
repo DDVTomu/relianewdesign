@@ -146,7 +146,7 @@
     }
 
     @include media(mobile, lg-mobile, lg-tablet, tablet) {
-      padding: 30px 20px;
+      padding: 30px 10px;
     }
 
     & h2 {
@@ -193,6 +193,10 @@
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
       }
+
+      @include media(mobile, lg-mobile, lg-tablet, tablet) {
+        height: 95px;
+      }
     }
   }
 
@@ -224,6 +228,31 @@
         margin: 0;
       }
     }
+  }
+
+  &__post_alt{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+
+    @include media(mobile, lg-mobile, lg-tablet, tablet) {
+      flex-direction: column;
+    }
+    & .expertise__featured_img{
+      width: 677px;
+      @include media(mobile, lg-mobile, lg-tablet, tablet) {
+        width: 100%;
+      }
+    }
+
+    & .expertise__featured_desc{
+      width: calc(100% - 677px);
+      @include media(mobile, lg-mobile, lg-tablet, tablet) {
+        width: 100%;
+      }
+    }
+
+    
   }
 
   &__featured_img {
@@ -280,29 +309,29 @@
     }
   }
 
-  &__alt {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 42px;
-    &_img {
-      width: 677px;
-    }
-    &_desc {
-      width: calc(100% - 677px);
-    }
+  // &__alt {
+  //   display: flex;
+  //   flex-direction: row-reverse;
+  //   gap: 42px;
+  //   &_img {
+  //     width: 677px;
+  //   }
+  //   &_desc {
+  //     width: calc(100% - 677px);
+  //   }
 
-    @include media(mobile, lg-mobile, lg-tablet, tablet) {
-      flex-direction: column;
-      gap: 0;
-      padding: 30px 20px;
-      &_img {
-        width: 100%;
-      }
-      &_desc {
-        width: 100%;
-      }
-    }
-  }
+  //   @include media(mobile, lg-mobile, lg-tablet, tablet) {
+  //     flex-direction: column;
+  //     gap: 0;
+  //     padding: 30px 20px;
+  //     &_img {
+  //       width: 100%;
+  //     }
+  //     &_desc {
+  //       width: 100%;
+  //     }
+  //   }
+  // }
 
   &__paginate {
     display: inline-flex;
@@ -313,6 +342,7 @@
     justify-content: center;
     width: 100%;
     gap: 10px;
+    flex-wrap: wrap;
     & button {
       cursor: pointer;
       background-color: transparent;

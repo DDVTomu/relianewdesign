@@ -45,10 +45,12 @@
       border: 1px solid #8f69ff;
       border-radius: 10px;
       margin-bottom: 30px;
-
+      box-shadow: inset 0px 0px 100px rgba(0,0,0,0.9);
       & span {
         width: 100% !important;
         display: block !important;
+        position: relative;
+        z-index: -2;
       }
       .img {
         transition: all 0.3s ease-in;

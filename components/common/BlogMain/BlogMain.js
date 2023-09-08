@@ -137,12 +137,14 @@ const BlogMain = ({ expertises = [], total, blogs = [], totalBlogsData }) => {
             <div id="blog-main">
               {featuredBlog[0].items[0].attributes?.map((item, key) => (
                 <Link href={`/blog/${item.slug}`} prefetch={false} key={key}>
-                  <a className={styles.expertise__post}>
+                  <a
+                    className={`${styles.expertise__post} ${styles.expertise__post_alt}`}
+                  >
                     <div className={styles.expertise__featured_img}>
                       <CloudImg
                         src={item.thumnail?.url}
-                        width={313}
-                        height={176}
+                        width={677}
+                        height={310}
                         alt={
                           item.thumnail?.alternativeText
                             ? item.thumnail.alternativeText
@@ -152,13 +154,15 @@ const BlogMain = ({ expertises = [], total, blogs = [], totalBlogsData }) => {
                         objectFit="cover"
                       />
                     </div>
-                    <h2>{item.title}</h2>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: item.description,
-                      }}
-                    />
-                    <div className={styles.expertise__post_tag}>
+                    <div className={styles.expertise__featured_desc}>
+                      <h2>{item.title}</h2>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: item.description,
+                        }}
+                      />
+                      <div className={styles.expertise__post_tag}></div>
+
                       <p>
                         {item.author?.data?.attributes.name}
                         <span className={styles.expertise__date}>

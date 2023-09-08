@@ -14,7 +14,7 @@ const ProjectsSection = React.memo(({ data = [] }) => {
               <div className={projects.block}>
                 <div className={projects.block_images}>
                   <div>
-                    <div className="background">
+                    <div className={projects.background}>
                       {project.attributes.projectImage.data && (
                         <Image
                           src={
@@ -22,7 +22,10 @@ const ProjectsSection = React.memo(({ data = [] }) => {
                           }
                           width={350}
                           height={250}
-                          alt={project.attributes.projectImage.projectName || project.attributes.portfolioName}
+                          alt={
+                            project.attributes.projectImage.projectName ||
+                            project.attributes.portfolioName
+                          }
                           className="background-img"
                           priority
                         />
@@ -44,7 +47,7 @@ const ProjectsSection = React.memo(({ data = [] }) => {
             </div>
           ))}
           <div className={`${projects.section_block}  empty`}>
-            <div className="background">
+            <div className={projects.background}>
               <p>See more of our works on our portfolio vault.</p>
               <a href="/portfolio" className="solid-button">
                 See our Portfolio
