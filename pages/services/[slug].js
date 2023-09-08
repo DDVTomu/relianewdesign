@@ -69,9 +69,9 @@ const ServiceDetail = ({ detail }) => {
                         <div className={service.list_itm} key={key}>
                           <div className={service.list_itm_img}>
                             <Image
-                              src={list.Icon.data.attributes.url}
-                              width={list.Icon.data.attributes.width}
-                              height={list.Icon.data.attributes.height}
+                              src={list.Icon?.data?.attributes.url}
+                              width={list.Icon?.data?.attributes.width}
+                              height={list.Icon?.data?.attributes.height}
                               layout="intrinsic"
                               loading="eager"
                               alt={list.Title}
