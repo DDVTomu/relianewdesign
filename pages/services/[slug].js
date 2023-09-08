@@ -221,7 +221,7 @@ const ServiceDetail = ({ detail }) => {
 export async function getServerSideProps({ params }) {
   const slug = params.slug;
   const populate =
-    "DynamicZone.TitleBox,DynamicZone.ServiceList,DynamicZone.ServiceList.Icon,DynamicZone.MainContentList,DynamicZone.MainContentList.Image,DynamicZone.Capabilities,DynamicZone.Capabilities.Text,Summary,DynamicZone.WhyChoose,DynamicZone.WhyChoose.Icon,metaImgShare";
+    "DynamicZone.TitleBox,DynamicZone.serviceList,DynamicZone.serviceList.Icon,DynamicZone.MainContentList,DynamicZone.MainContentList.Image,DynamicZone.Capabilities,DynamicZone.Capabilities.Text,Summary,DynamicZone.WhyChoose,DynamicZone.WhyChoose.Icon,metaImgShare";
   const servicesRes = await fetchAPI(
     `services?filters[slug][$eq]=${slug}&populate=*,${populate}`
   );
