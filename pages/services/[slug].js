@@ -127,7 +127,9 @@ const ServiceDetail = ({ detail }) => {
                             )}
                           </div>
                           <h5>{itm.Title}</h5>
-                          <p>{itm.Content}</p>
+                          <p
+                              dangerouslySetInnerHTML={{ __html: itm.Content }}
+                            />
                         </div>
                       </div>
                     ))}
@@ -155,7 +157,9 @@ const ServiceDetail = ({ detail }) => {
                         >
                           <Animation className="box-media__text">
                             <h3 className="hdg-lv3">{itm.Title}</h3>
-                            <p>{itm.Content}</p>
+                            <p
+                              dangerouslySetInnerHTML={{ __html: itm.Content }}
+                            />
                           </Animation>
                           <Animation className="box-media__img">
                             {itm.Image.data !== null || itm.Image.data ? (
