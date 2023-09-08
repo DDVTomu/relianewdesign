@@ -69,7 +69,7 @@ const IndustriesPage = ({ industry }) => {
   const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_SERVER;
 
   const updatedDescription = (data) => {
-    const update = data.replace(/src="(\.\.\/)/g, `src="${strapiUrl}/`);
+    const update = data?.replace(/src="(\.\.\/)/g, `src="${strapiUrl}/`);
     return update;
   };
 
