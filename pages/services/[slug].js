@@ -65,7 +65,7 @@ const ServiceDetail = ({ detail }) => {
                   <div className="container">
                     <h2 className="hdg-lv2">{section.serviceHeading}</h2>
                     <div className={service.list}>
-                      {section.ServiceList?.map((list, key) => (
+                      {section.serviceList?.map((list, key) => (
                         <div className={service.list_itm} key={key}>
                           <div className={service.list_itm_img}>
                             <Image
