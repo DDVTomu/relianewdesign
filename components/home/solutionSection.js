@@ -12,7 +12,7 @@ const SolutionSection = ({ data = [], provides }) => {
     data.data.forEach((itm) => {
       if (
         element.attributes.Name ===
-        itm.attributes.services_provide.data?.attributes.Name
+        itm.attributes.services_provide?.data?.attributes.Name
       ) {
         tempArr.push({
           service: itm.attributes.Title,

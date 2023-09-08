@@ -68,6 +68,11 @@ const IndustriesPage = ({ industry }) => {
 
   const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_SERVER;
 
+  const updatedDescription = (data) => {
+    const update = data.replace(/src="(\.\.\/)/g, `src="${strapiUrl}/`);
+    return update;
+  };
+
   const seo = {
     metaTitle: `${industry?.attributes.Title} | USA & Vietnam`,
     metaDescription: `${industry?.attributes.metaDescription}`,
@@ -168,16 +173,11 @@ const IndustriesPage = ({ industry }) => {
                     />
                     <div className="list-operations">
                       {section.ListItem?.map((list) => {
-                        const updatedDescription = list.Description.replace(
-                          /src="(\.\.\/)/g,
-                          `src="${strapiUrl}/`
-                        );
-
                         return (
                           <Animation className="list-operations__col">
                             <div
                               dangerouslySetInnerHTML={{
-                                __html: updatedDescription,
+                                __html: updatedDescription(list.Description),
                               }}
                             />
                           </Animation>
