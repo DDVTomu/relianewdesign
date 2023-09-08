@@ -1,13 +1,16 @@
 .detail {
   background: #e6e6e6;
   padding: 80px 0 60px;
+
   @media screen and (max-width: 767px) {
     padding: 40px 0 20px;
   }
 }
+
 .list {
   display: flex;
   flex-wrap: wrap;
+
   &_itm {
     padding: 20px;
     background: #fff;
@@ -16,70 +19,90 @@
     margin-bottom: 20px;
     border-radius: 12px;
     display: inline-flex;
+
     @media screen and (max-width: 767px) {
       width: 100%;
       margin-left: 0;
     }
+
     &:nth-child(2n + 1) {
       margin-left: 0;
     }
+
     &_img {
-      width: 200px;
+      width: 59px;
     }
+
     &_ctn {
+      width: calc(100% - 59px);
       padding-left: 20px;
-      & > p:last-child {
+
+      &>p:last-child {
         margin-bottom: 0;
       }
     }
+
     &_title {
       font-weight: bold;
       margin-bottom: 10px;
     }
   }
 }
+
 .content {
   padding: 80px 0;
+
   @media screen and (max-width: 767px) {
     padding: 40px 0;
   }
 }
+
 .capabilities {
   padding: 80px 0;
+
   @media screen and (max-width: 767px) {
     padding: 40px 0;
   }
 }
+
 .why {
   padding: 80px 0 100px;
+
   @media screen and (max-width: 767px) {
     padding: 40px 0 80px;
   }
+
   &_slider {
     &_col {
       padding: 0 20px;
+
       &_pt {
         padding-top: 40px;
+
         @media screen and (max-width: 767px) {
           padding-top: 0;
         }
       }
     }
+
     &_inner {
       background-color: #fff;
       padding: 20px;
+
       p:last-child {
         margin-bottom: 0;
       }
     }
   }
 }
+
 .caps {
   display: flex;
   margin-left: 0;
   list-style: none;
   flex-wrap: wrap;
   counter-reset: myCounter;
+
   li {
     width: calc((100% - 60px) / 4);
     margin-left: 20px;
@@ -89,6 +112,7 @@
     border: 1px solid #e7daed;
     border-radius: 8px;
     counter-increment: myCounter;
+
     @media screen and (max-width: 767px) {
       width: calc((100% - 30px) / 2);
       margin-left: 15px;
@@ -97,15 +121,17 @@
         margin-left: 0;
       }
     }
+
     &:nth-child(4n + 1) {
       margin-left: 0;
+
       @media screen and (max-width: 767px) {
         margin-left: 0;
       }
     }
 
     &::before {
-      content: "#" counter(myCounter);
+      content: "#"counter(myCounter);
       padding-right: 5px;
     }
   }
@@ -115,6 +141,7 @@
   text-align: center;
   padding: 0 40px;
   margin: 80px 0px;
+
   & .header_lv2 {
     color: #282828;
     font-size: 48px;
