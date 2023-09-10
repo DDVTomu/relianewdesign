@@ -63,7 +63,9 @@ const ServiceDetail = ({ detail }) => {
               return (
                 <div className={service.detail}>
                   <div className="container">
-                    <h2 className="hdg-lv2">{section.serviceHeading}</h2>
+                    {
+                      section.serviceHeading ??  <h2 className="hdg-lv2">{section.serviceHeading}</h2>
+                    }
                     <div className={service.list}>
                       {section.serviceList?.map((list, key) => (
                         <div className={service.list_itm} key={key}>
@@ -142,7 +144,10 @@ const ServiceDetail = ({ detail }) => {
               return (
                 <div className={service.content}>
                   <div className="container">
-                    <h2 className="hdg-lv2">{section.mainHeading}</h2>
+                    { section.mainHeading ??
+                      <h2 className="hdg-lv2">{section.mainHeading}</h2>
+                    }
+                    
                     <div
                       dangerouslySetInnerHTML={{
                         __html: updatedDescription(section.MainContent),
@@ -186,7 +191,10 @@ const ServiceDetail = ({ detail }) => {
               return (
                 <div className={`sec-bg ${service.capabilities}`}>
                   <div className="container">
-                    <h2 className="hdg-lv2">{section.capabilitiesHeading}</h2>
+                    {
+                      section.capabilitiesHeading ?? <h2 className="hdg-lv2">{section.capabilitiesHeading}</h2>
+                    }
+                    
                     {section.Capabilities?.length > 0 && (
                       <ul className={service.caps}>
                         {section.Capabilities?.map((cap, key) => (
@@ -201,7 +209,7 @@ const ServiceDetail = ({ detail }) => {
               return (
                 <div className="container">
                   <div className={service.heading}>
-                    <h2 className="hdg-lv2">{section.Title}</h2>
+                    { section.Title ?? <h2 className="hdg-lv2">{section.Title}</h2>}
                     <div
                       dangerouslySetInnerHTML={{
                         __html: updatedDescription(section.Description),
