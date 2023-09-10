@@ -66,6 +66,13 @@ const ServiceDetail = ({ detail }) => {
                     {
                       section.serviceHeading ? <h2 className="hdg-lv2">{section.serviceHeading}</h2> : ""
                     }
+                                        {
+                      section.serviceDescription ?  <div
+                      dangerouslySetInnerHTML={{
+                        __html: updatedDescription(section.serviceDescription),
+                      }}
+                    /> : ""
+                    }
                     <div className={service.list}>
                       {section.serviceList?.map((list, key) => (
                         <div className={service.list_itm} key={key}>
