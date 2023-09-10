@@ -64,7 +64,7 @@ const ServiceDetail = ({ detail }) => {
                 <div className={service.detail}>
                   <div className="container">
                     {
-                      section.serviceHeading ??  <h2 className="hdg-lv2">{section.serviceHeading}</h2>
+                      section.serviceHeading ? <h2 className="hdg-lv2">{section.serviceHeading}</h2> : ""
                     }
                     <div className={service.list}>
                       {section.serviceList?.map((list, key) => (
@@ -144,8 +144,8 @@ const ServiceDetail = ({ detail }) => {
               return (
                 <div className={service.content}>
                   <div className="container">
-                    { section.mainHeading ??
-                      <h2 className="hdg-lv2">{section.mainHeading}</h2>
+                    { section.mainHeading ?
+                      <h2 className="hdg-lv2">{section.mainHeading}</h2> : ""
                     }
                     
                     <div
@@ -192,7 +192,7 @@ const ServiceDetail = ({ detail }) => {
                 <div className={`sec-bg ${service.capabilities}`}>
                   <div className="container">
                     {
-                      section.capabilitiesHeading ?? <h2 className="hdg-lv2">{section.capabilitiesHeading}</h2>
+                      section.capabilitiesHeading ? <h2 className="hdg-lv2">{section.capabilitiesHeading}</h2> : ""
                     }
                     
                     {section.Capabilities?.length > 0 && (
@@ -209,7 +209,7 @@ const ServiceDetail = ({ detail }) => {
               return (
                 <div className="container">
                   <div className={service.heading}>
-                    { section.Title ?? <h2 className="hdg-lv2">{section.Title}</h2>}
+                    { section.Title ? <h2 className="hdg-lv2">{section.Title}</h2> : ""}
                     <div
                       dangerouslySetInnerHTML={{
                         __html: updatedDescription(section.Description),
