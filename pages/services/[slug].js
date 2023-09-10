@@ -76,8 +76,9 @@ const ServiceDetail = ({ detail }) => {
                     <div className={service.list}>
                       {section.serviceList?.map((list, key) => (
                         <div className={service.list_itm} key={key}>
-                          <div className={service.list_itm_img}>
-                            {list.Icon?.data?           
+                          
+                            {list.Icon?.data?  
+                            <div className={service.list_itm_img}>        
                              <Image
                               src={list.Icon?.data?.attributes.url}
                               width={list.Icon?.data?.attributes.width}
@@ -85,8 +86,8 @@ const ServiceDetail = ({ detail }) => {
                               layout="intrinsic"
                               loading="eager"
                               alt={list.Title}
-                            /> : "" }
-                          </div>
+                            /></div> : "" }
+                          
                           <div className={service.list_itm_ctn}>
                             <div className={service.list_itm_title}>
                               {list.Title}
