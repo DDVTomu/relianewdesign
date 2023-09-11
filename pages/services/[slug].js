@@ -63,31 +63,40 @@ const ServiceDetail = ({ detail }) => {
               return (
                 <div className={service.detail} key={index}>
                   <div className="container">
-                    {
-                      section.serviceHeading ? <h2 className="hdg-lv2">{section.serviceHeading}</h2> : ""
-                    }
-                                        {
-                      section.serviceDescription ?  <div
-                      dangerouslySetInnerHTML={{
-                        __html: updatedDescription(section.serviceDescription),
-                      }}
-                    /> : ""
-                    }
+                    {section.serviceHeading ? (
+                      <h2 className="hdg-lv2">{section.serviceHeading}</h2>
+                    ) : (
+                      ""
+                    )}
+                    {section.serviceDescription ? (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: updatedDescription(
+                            section.serviceDescription
+                          ),
+                        }}
+                      />
+                    ) : (
+                      ""
+                    )}
                     <div className={service.list}>
                       {section.serviceList?.map((list, key) => (
                         <div className={service.list_itm} key={key}>
-                          
-                            {list.Icon?.data?  
-                            <div className={service.list_itm_img}>        
-                             <Image
-                              src={list.Icon?.data?.attributes.url}
-                              width={list.Icon?.data?.attributes.width}
-                              height={list.Icon?.data?.attributes.height}
-                              layout="intrinsic"
-                              loading="eager"
-                              alt={list.Title}
-                            /></div> : "" }
-                          
+                          {list.Icon?.data ? (
+                            <div className={service.list_itm_img}>
+                              <Image
+                                src={list.Icon?.data?.attributes.url}
+                                width={list.Icon?.data?.attributes.width}
+                                height={list.Icon?.data?.attributes.height}
+                                layout="intrinsic"
+                                loading="eager"
+                                alt={list.Title}
+                              />
+                            </div>
+                          ) : (
+                            ""
+                          )}
+
                           <div className={service.list_itm_ctn}>
                             <div className={service.list_itm_title}>
                               {list.Title}
@@ -139,8 +148,8 @@ const ServiceDetail = ({ detail }) => {
                           </div>
                           <h5>{itm.Title}</h5>
                           <p
-                              dangerouslySetInnerHTML={{ __html: itm.Content }}
-                            />
+                            dangerouslySetInnerHTML={{ __html: itm.Content }}
+                          />
                         </div>
                       </div>
                     ))}
@@ -152,10 +161,12 @@ const ServiceDetail = ({ detail }) => {
               return (
                 <div className={service.content} key={index}>
                   <div className="container">
-                    { section.mainHeading ?
-                      <h2 className="hdg-lv2">{section.mainHeading}</h2> : ""
-                    }
-                    
+                    {section.mainHeading ? (
+                      <h2 className="hdg-lv2">{section.mainHeading}</h2>
+                    ) : (
+                      ""
+                    )}
+
                     <div
                       dangerouslySetInnerHTML={{
                         __html: updatedDescription(section.MainContent),
@@ -199,10 +210,12 @@ const ServiceDetail = ({ detail }) => {
               return (
                 <div className={`sec-bg ${service.capabilities}`} key={index}>
                   <div className="container">
-                    {
-                      section.capabilitiesHeading ? <h2 className="hdg-lv2">{section.capabilitiesHeading}</h2> : ""
-                    }
-                    
+                    {section.capabilitiesHeading ? (
+                      <h2 className="hdg-lv2">{section.capabilitiesHeading}</h2>
+                    ) : (
+                      ""
+                    )}
+
                     {section.Capabilities?.length > 0 && (
                       <ul className={service.caps}>
                         {section.Capabilities?.map((cap, key) => (
@@ -217,13 +230,69 @@ const ServiceDetail = ({ detail }) => {
               return (
                 <div className="container" key={index}>
                   <div className={service.heading}>
-                    { section.Title ? <h2 className="hdg-lv2">{section.Title}</h2> : ""}
+                    {section.Title ? (
+                      <h2 className="hdg-lv2">{section.Title}</h2>
+                    ) : (
+                      ""
+                    )}
                     <div
                       dangerouslySetInnerHTML={{
                         __html: updatedDescription(section.Description),
                       }}
                     />
                   </div>
+                </div>
+              );
+            case "service.carousel-section":
+              return (
+                <div className={`sec-bg ${service.why}`} key={index}>
+                  <div className="container">
+                    {section.mainHeading ? (
+                      <h2 className="hdg-lv2">{section.Title}</h2>
+                    ) : (
+                      ""
+                    )}
+
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: updatedDescription(section.Description),
+                      }}
+                    />
+                  </div>
+                  <Slider
+                    className={`service_slider ${service.why_slider}`}
+                    {...settings}
+                  >
+                    {section?.CarouselItem?.map((itm, key) => (
+                      <div
+                        className={`${service.why_slider_col} ${
+                          key % 2 === 0 ? service.why_slider_col_pt : ""
+                        }`}
+                        key={key}
+                      >
+                        <div className={service.why_slider_inner}>
+                          <div className={service.why_slider_img}>
+                            {itm.Icon.data !== null || itm.Icon.data ? (
+                              <Image
+                                src={itm.Icon.data.attributes.url}
+                                width={itm.Icon.data.attributes.width}
+                                height={itm.Icon.data.attributes.height}
+                                layout="intrinsic"
+                                loading="eager"
+                                alt={itm.Title}
+                              />
+                            ) : (
+                              ""
+                            )}
+                          </div>
+                          <h5>{itm.Title}</h5>
+                          <p
+                            dangerouslySetInnerHTML={{ __html: itm.Content }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </Slider>
                 </div>
               );
           }
@@ -238,7 +307,7 @@ const ServiceDetail = ({ detail }) => {
 export async function getServerSideProps({ params }) {
   const slug = params.slug;
   const populate =
-    "DynamicZone.TitleBox,DynamicZone.serviceList,DynamicZone.serviceList.Icon,DynamicZone.MainContentList,DynamicZone.MainContentList.Image,DynamicZone.Capabilities,DynamicZone.Capabilities.Text,Summary,DynamicZone.WhyChoose,DynamicZone.WhyChoose.Icon,metaImgShare";
+    "DynamicZone.TitleBox,DynamicZone.serviceList,DynamicZone.serviceList.Icon,DynamicZone.MainContentList,DynamicZone.MainContentList.Image,DynamicZone.Capabilities,DynamicZone.Capabilities.Text,Summary,DynamicZone.WhyChoose,DynamicZone.WhyChoose.Icon,metaImgShare,DynamicZone.CarouselItem,DynamicZone.CarouselItem.Icon";
   const servicesRes = await fetchAPI(
     `services?filters[slug][$eq]=${slug}&populate=*,${populate}`
   );
