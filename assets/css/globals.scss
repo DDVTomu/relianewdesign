@@ -2688,8 +2688,9 @@ pre tt:after {
           display: inline-block;
           font-size: 18px;
           letter-spacing: 0.25px;
+          font-weight: 500;
           & + span {
-            margin-left: 5px;
+            margin-left: 10px;
           }
         }
       }

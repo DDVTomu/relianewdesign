@@ -114,9 +114,8 @@ class Header extends React.Component {
     const { active } = this.state;
     return (
       <header
-        className={`header ${className || ""} ${
-          this.state.activeClass ? "fixed" : ""
-        }`}
+        className={`header ${className || ""} ${this.state.activeClass ? "fixed" : ""
+          }`}
       >
         <div className={`header__inner ${active === true ? "is-open" : ""}`}>
           <div className="container">
@@ -144,17 +143,15 @@ class Header extends React.Component {
                   {menus.map((item, index) => (
                     <li
                       key={index}
-                      className={`${item.subMenu ? "hadSub" : ""} ${
-                        this.state.openSub === true ? "open" : ""
-                      }`}
+                      className={`${item.subMenu ? "hadSub" : ""} ${this.state.openSub === true ? "open" : ""
+                        }`}
                     >
                       <Link href={item.slug} scroll={true}>
                         <a
-                          className={`nav-link  ${
-                            router.pathname.includes(item.slug)
+                          className={`nav-link  ${router.pathname.includes(item.slug)
                               ? "nav-link current"
                               : ""
-                          }`}
+                            }`}
                           role="button"
                         >
                           {item.name}
@@ -163,9 +160,8 @@ class Header extends React.Component {
                       {item.subMenu && (
                         <>
                           <div
-                            className={`navbar__sub ${
-                              this.state.openSub === true ? "open" : ""
-                            }`}
+                            className={`navbar__sub ${this.state.openSub === true ? "open" : ""
+                              }`}
                           >
                             <div className="navbar__sub_itm">
                               <h2>Solutions We Provide</h2>
@@ -179,60 +175,56 @@ class Header extends React.Component {
                             </div>
                             <div className="navbar__sub_itm">
                               <div>
-                                <span>iOS</span>,
+                                <span>iOS</span>
                                 <span style={{ color: "#00A133" }}>
                                   Android
                                 </span>
-                                ,
                                 <span style={{ color: "#9F3AFF" }}>Kotlin</span>
-                                ,
                               </div>
                               <div>
                                 <span style={{ color: "#00AFDC" }}>
                                   React Native
                                 </span>
-                                ,
                                 <span style={{ color: "#0060A7" }}>
                                   Flutter
                                 </span>
-                                ,<span style={{ color: "#FF4400" }}> Swift</span>,
+                                <span style={{ color: "#FF4400" }}> Swift</span>
                               </div>
                               <div>
                                 <span style={{ color: "#D50027" }}>
                                   Angular
                                 </span>
-                                ,
                                 <span style={{ color: "#00AFDC" }}>
                                   ReactJS
                                 </span>
-                                ,<span style={{ color: "#2E4A60" }}> Vue.js</span>,
+                                <span style={{ color: "#2E4A60" }}> Vue.js</span>
                               </div>
                               <div>
                                 <span style={{ color: "#F09D00" }}>
                                   Javascript
                                 </span>
-                                ,<span style={{ color: "#282828" }}> Next.js</span>,
+                                <span style={{ color: "#282828" }}> Next.js</span>
                                 <span style={{ color: "#00AFDC" }}>Golang</span>
-                                ,
                               </div>
                               <div>
-                                <span style={{ color: "#767BB7" }}>PHP</span>,
+                                <span style={{ color: "#767BB7" }}>PHP</span>
                                 <span style={{ color: "#D50027" }}>
                                   Ruby on Rails
                                 </span>
-                                ,<span style={{ color: "#408A3B" }}> Node.js</span>,
+                                <span style={{ color: "#408A3B" }}> Node.js</span>
                               </div>
                               <div>
-                                <span style={{ color: "#106A9B" }}>Python</span>,
-                                <span style={{ color: "#407999" }}> Java</span>,<span style={{ color: "#0060A7" }}> ASP.NET</span>,
+                                <span style={{ color: "#106A9B" }}>Python</span>
+                                <span style={{ color: "#407999" }}> Java</span><span style={{ color: "#0060A7" }}> ASP.NET</span>
                               </div>
-                              <span style={{ color: "#002F1F" }}>Django</span>
+                              <div>
+                                <span style={{ color: "#002F1F" }}>Django</span>
+                              </div>
                             </div>
                           </div>
                           <span
-                            className={`icon-plus ${
-                              this.state.openSub === true ? "open" : ""
-                            }`}
+                            className={`icon-plus ${this.state.openSub === true ? "open" : ""
+                              }`}
                             onClick={this.onClickSub}
                           ></span>
                         </>
