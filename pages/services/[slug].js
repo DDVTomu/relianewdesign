@@ -13,29 +13,60 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import service from "./service.module.scss";
 const ServiceDetail = ({ detail }) => {
-  const settings = {
-    dots: true,
-    infinite: false,
-    arrows: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    centerMode: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   arrows: false,
+  //   speed: 500,
+  //   slidesToShow: 4,
+  //   slidesToScroll: 1,
+  //   centerMode: true,
+  //   responsive: [
+  //     {
+  //       breakpoint: 768,
+  //       settings: {
+  //         slidesToShow: 3,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 480,
+  //       settings: {
+  //         slidesToShow: 1,
+  //       },
+  //     },
+  //   ],
+  // };
+
+  const SlideSettings = (arr) => {
+    if (arr) {
+      const settings = {
+        dots: true,
+        infinite: arr.length > 4 ? true : false,
+        arrows: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        centerMode: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 3,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+            },
+          },
+        ],
+      };
+
+      return settings;
+    }
   };
+
   // console.log(detail);
   const seo = {
     metaTitle: detail.metaTitle,
@@ -122,7 +153,7 @@ const ServiceDetail = ({ detail }) => {
                   </div>
                   <Slider
                     className={`service_slider ${service.why_slider}`}
-                    {...settings}
+                    {...SlideSettings(section.WhyChoose)}
                   >
                     {section?.WhyChoose?.map((itm, key) => (
                       <div
@@ -261,7 +292,7 @@ const ServiceDetail = ({ detail }) => {
                   </div>
                   <Slider
                     className={`service_slider ${service.why_slider}`}
-                    {...settings}
+                    {...SlideSettings(section.CarouselItem)}
                   >
                     {section?.CarouselItem?.map((itm, key) => (
                       <div
