@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import PageTitle from "@components/pageTitle";
 import Layout from "@components/common/layout";
-
 import SEO from "@components/seo";
 import Image from "next/image";
 import imgPlaceHoder from "@images/video-placehoder.png";
@@ -53,6 +52,17 @@ const ServicesPage = ({ data, provides }) => {
                 loading="eager"
                 alt="How We Bring Your Project"
               />
+              {/* <video width="320" height="240" controls>
+                <source src="/images/services/relia-video.mp4" type="video/mp4" />
+              </video> */}
+              {/* <JolPlayer
+                option={{
+                  videoSrc: "/images/services/relia-video.mp4",
+                  width: 750,
+                  height: 420,
+                  poster: imgPlaceHoder
+                }}
+              /> */}
             </Animation>
           </div>
         </div>
