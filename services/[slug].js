@@ -15,7 +15,7 @@ import service from "./service.module.scss";
 const ServiceDetail = ({ detail }) => {
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     arrows: false,
     speed: 500,
     slidesToShow: 4,
@@ -57,11 +57,11 @@ const ServiceDetail = ({ detail }) => {
         content={<BoxProcess data={detail?.Summary} />}
       />
       <div className="main">
-        {detail?.DynamicZone?.map((section, index) => {
+        {detail?.DynamicZone?.map((section) => {
           switch (section.__component) {
             case "service.service-section":
               return (
-                <div className={service.detail} key={index}>
+                <div className={service.detail}>
                   <div className="container">
                     {
                       section.serviceHeading ? <h2 className="hdg-lv2">{section.serviceHeading}</h2> : ""
@@ -107,7 +107,7 @@ const ServiceDetail = ({ detail }) => {
 
             case "whychoose.why-choose-section":
               return (
-                <div className={`sec-bg ${service.why}`} key={index}>
+                <Animation className={`sec-bg ${service.why}`}>
                   <div className="container">
                     <h2 className="hdg-lv2">Why Choose Relia</h2>
                   </div>
@@ -145,12 +145,12 @@ const ServiceDetail = ({ detail }) => {
                       </div>
                     ))}
                   </Slider>
-                </div>
+                </Animation>
               );
 
             case "main-content.main-content-section":
               return (
-                <div className={service.content} key={index}>
+                <div className={service.content}>
                   <div className="container">
                     { section.mainHeading ?
                       <h2 className="hdg-lv2">{section.mainHeading}</h2> : ""
@@ -197,7 +197,7 @@ const ServiceDetail = ({ detail }) => {
 
             case "capabilities.capabilities-section":
               return (
-                <div className={`sec-bg ${service.capabilities}`} key={index}>
+                <div className={`sec-bg ${service.capabilities}`}>
                   <div className="container">
                     {
                       section.capabilitiesHeading ? <h2 className="hdg-lv2">{section.capabilitiesHeading}</h2> : ""
@@ -215,7 +215,7 @@ const ServiceDetail = ({ detail }) => {
               );
             case "service.title-box":
               return (
-                <div className="container" key={index}>
+                <div className="container">
                   <div className={service.heading}>
                     { section.Title ? <h2 className="hdg-lv2">{section.Title}</h2> : ""}
                     <div

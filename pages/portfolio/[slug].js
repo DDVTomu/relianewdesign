@@ -100,7 +100,7 @@ const PortfolioDetailPage = ({ portfolio = {}, portfolios }) => {
         ""
       )}
       {portfolio[0].attributes.resultAndImpact ||
-      portfolio[0].attributes.Milestone ? (
+        portfolio[0].attributes.Milestone ? (
         <section
           className={`${styles.portfolio_content} ${styles.portfolio_result}`}
         >
@@ -120,16 +120,11 @@ const PortfolioDetailPage = ({ portfolio = {}, portfolios }) => {
         <section className={`${styles.portfolio_content__team}`}>
           <div className="container">
             <div className={`${styles.portfolio_content__team_flex}`}>
-              <h2>
-                {/* <ReactMarkdown components={{ h2: HeadingRenderer }}>
-                  {portfolio[0].attributes.Milestone}
-                </ReactMarkdown> */}
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: portfolio[0].attributes.Milestone,
-                  }}
-                />
-              </h2>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: portfolio[0].attributes.Milestone,
+                }}
+              />
               <div className={`${styles.portfolio_content__team_flex_img}`}>
                 {portfolio[0].attributes.milestoneImg.data ? (
                   <CloudImg

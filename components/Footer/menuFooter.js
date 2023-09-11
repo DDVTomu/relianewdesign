@@ -45,22 +45,26 @@ const menuFooter = {
     {
       id: 3,
       name: "Top rated in Clutch",
-      slug: "top-rated-in-clutch",
+      slug: "https://clutch.co/vn/it-services/staff-augmentation/leaders-matrix",
+      external: true
     },
     {
       id: 4,
       name: "Top rated in GoodFirms",
-      slug: "top-rated-in-goodFirms",
+      slug: "https://www.goodfirms.co/directory/country/list-blockchain-technology-companies/vietnam",
+      external: true
     },
     {
       id: 5,
       name: "Top rated in The Manifest",
-      slug: "top-rated-in-the-manifest",
+      slug: "https://themanifest.com/vn/software-development/go/companies",
+      external: true
     },
     {
       id: 6,
-      name: "Top rated in The Manifest",
-      slug: "top-rated-in-the-manifest",
+      name: "Top rated in Wadline",
+      slug: "https://wadline.com/mobile/vn",
+      external: true
     },
     {
       id: 7,
@@ -77,49 +81,39 @@ const menuFooter = {
     {
       id: 1,
       name: "Design Thinking",
-      slug: "design-thinking",
+      slug: "/services#design-thinking",
     },
     {
       id: 2,
       name: "App Development",
-      slug: "app-development",
+      slug: "/services#app-development",
     },
     {
       id: 3,
       name: "Digital Transformation",
-      slug: "digital-transformation",
+      slug: "/services#digital-transformation",
     },
     {
       id: 4,
       name: "Offshore Team",
-      slug: "offshore-team",
+      slug: "/services#off-shore-team",
     },
   ],
   industries: [
     {
       id: 1,
       name: "eCommerce",
-      slug: "ecommerce",
+      slug: "/industries/e-commerce-app-development",
     },
     {
       id: 2,
       name: "Healthcare",
-      slug: "healthcare",
+      slug: "/industries/healthcare-app-development",
     },
     {
       id: 3,
       name: "Fintech",
-      slug: "fintech",
-    },
-    {
-      id: 4,
-      name: "Supply Chain",
-      slug: "<s></s>upply-chain",
-    },
-    {
-      id: 5,
-      name: "Social Media",
-      slug: "social-media",
+      slug: "/industries/fintech-app-development",
     },
   ],
   dataSocial: [

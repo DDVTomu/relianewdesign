@@ -110,7 +110,6 @@ class Header extends React.Component {
   };
 
   render() {
-    // console.log(data);
     const { siteTitle, menuLinks, className, props, router } = this.props;
     const { active } = this.state;
     return (
@@ -173,35 +172,61 @@ class Header extends React.Component {
                               <ul>
                                 {item.subMenu.map((sub, index) => (
                                   <li key={index}>
-                                    <Link href={sub.slug}>{sub.name}</Link>
+                                    <a href={sub.slug}>{sub.name}</a>
                                   </li>
                                 ))}
                               </ul>
                             </div>
                             <div className="navbar__sub_itm">
-                              <span>iOS</span>,
-                              <span style={{ color: "#00A133" }}>Android</span>,
-                              <span style={{ color: "#9F3AFF" }}>Kotlin</span>,
-                              <span style={{ color: "#00AFDC" }}>
-                                React Native
-                              </span>
-                              ,<span style={{ color: "#0060A7" }}>Flutter</span>
-                              ,<span>Swift</span>,
-                              <span style={{ color: "#D50027" }}>Angular</span>,
-                              <span style={{ color: "#00AFDC" }}>ReactJS</span>,
-                              <span>Vue.js</span>,
-                              <span style={{ color: "#F09D00" }}>
-                                Javascript
-                              </span>
-                              ,<span>Next.js</span>,
-                              <span style={{ color: "#00AFDC" }}>Golang</span>,
-                              <span style={{ color: "#767BB7" }}>PHP</span>,
-                              <span style={{ color: "#D50027" }}>
-                                Ruby on Rails
-                              </span>
-                              ,<span>Node.js</span> ,<span>Python</span>,
-                              <span>Java</span>,<span>ASP.NET</span>,
-                              <span>Django</span>
+                              <div>
+                                <span>iOS</span>,
+                                <span style={{ color: "#00A133" }}>
+                                  Android
+                                </span>
+                                ,
+                                <span style={{ color: "#9F3AFF" }}>Kotlin</span>
+                                ,
+                              </div>
+                              <div>
+                                <span style={{ color: "#00AFDC" }}>
+                                  React Native
+                                </span>
+                                ,
+                                <span style={{ color: "#0060A7" }}>
+                                  Flutter
+                                </span>
+                                ,<span style={{ color: "#FF4400" }}> Swift</span>,
+                              </div>
+                              <div>
+                                <span style={{ color: "#D50027" }}>
+                                  Angular
+                                </span>
+                                ,
+                                <span style={{ color: "#00AFDC" }}>
+                                  ReactJS
+                                </span>
+                                ,<span style={{ color: "#2E4A60" }}> Vue.js</span>,
+                              </div>
+                              <div>
+                                <span style={{ color: "#F09D00" }}>
+                                  Javascript
+                                </span>
+                                ,<span style={{ color: "#282828" }}> Next.js</span>,
+                                <span style={{ color: "#00AFDC" }}>Golang</span>
+                                ,
+                              </div>
+                              <div>
+                                <span style={{ color: "#767BB7" }}>PHP</span>,
+                                <span style={{ color: "#D50027" }}>
+                                  Ruby on Rails
+                                </span>
+                                ,<span style={{ color: "#408A3B" }}> Node.js</span>,
+                              </div>
+                              <div>
+                                <span style={{ color: "#106A9B" }}>Python</span>,
+                                <span style={{ color: "#407999" }}> Java</span>,<span style={{ color: "#0060A7" }}> ASP.NET</span>,
+                              </div>
+                              <span style={{ color: "#002F1F" }}>Django</span>
                             </div>
                           </div>
                           <span

@@ -20,7 +20,10 @@ const AwardSection = React.memo(() => (
       </div>
       <div className="awards__list">
         {dataAward.map((award, key) => (
-          <div
+          <a
+            href={award.link}
+            target="_blank"
+            rel="noopener noreferrer"
             key={key}
             className="item"
             style={{
@@ -40,7 +43,7 @@ const AwardSection = React.memo(() => (
             <div className="item__bootom">
               <p>{award.desc}</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

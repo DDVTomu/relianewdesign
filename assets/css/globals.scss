@@ -1562,7 +1562,7 @@ pre tt:after {
 
           &_info {
             color: #636e72;
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 500;
             line-height: 30px;
             margin-bottom: 0px;
@@ -1648,7 +1648,6 @@ pre tt:after {
     }
 
     .item {
-      // padding: 2.8125em 3.125em;
       padding: 17px;
       width: calc((100% - 150px) / 2);
       border-radius: 20px;
@@ -1659,6 +1658,10 @@ pre tt:after {
               0.3
             )
             0%, transparent 40%, transparent 100%);
+      transition: all 0.25s ease-in-out;
+      &:hover {
+        transform: translateY(-10px);
+      }
       @media only screen and (max-width: 767px) {
         position: static;
         margin-bottom: 51px;
@@ -1668,23 +1671,11 @@ pre tt:after {
         box-sizing: border-box;
         padding: 1.5125em 1.125em;
       }
-      // &:nth-child(2n) {
-      //   margin-top: 100px;
-
-      //   @media only screen and (max-width: 767px) {
-      //     margin-top: 30px;
-      //   }
-      // }
 
       &__top {
         display: flex;
-        // align-items: center;
         justify-content: center;
         margin-bottom: 5px;
-
-        // @media only screen and (max-width: 767px) {
-        //   margin-bottom: 20px;
-        // }
 
         &__title {
           font-size: 24px;
@@ -2633,11 +2624,14 @@ pre tt:after {
       margin: 0 0 20px;
     }
     &_itm {
-      flex: 1;
       padding: 20px;
+      &:first-child {
+        flex: 1;
+      }
       &:last-child {
-        width: 40%;
+        width: 46%;
         background: #f9f9f9;
+        line-height: 27px;
         @media only screen and (max-width: 767px) {
           width: 100%;
         }
@@ -2662,6 +2656,10 @@ pre tt:after {
             justify-content: center;
             margin-right: 10px;
           }
+          &:hover::before {
+            color: #8f69ff;
+            border-color: #8f69ff;
+          }
           a {
             position: relative;
             display: inline-flex;
@@ -2676,15 +2674,23 @@ pre tt:after {
             &:hover {
               color: #8f69ff;
               border-bottom: 1px solid #8f69ff;
+              &::before {
+                color: #8f69ff;
+                border-color: #8f69ff;
+              }
             }
           }
         }
       }
-      span {
-        display: inline-block;
-        font-size: 18px;
-        & + span {
-          margin-left: 5px;
+      & > div {
+        display: flex;
+        span {
+          display: inline-block;
+          font-size: 18px;
+          letter-spacing: 0.25px;
+          & + span {
+            margin-left: 5px;
+          }
         }
       }
     }

@@ -52,12 +52,11 @@ const IntroSection = React.memo(() => {
               <div className={intro.section_code_techbox}>
                 <h3>Tech Stack</h3>
                 <p>{`<today-tomorrow-beyond>`}</p>
-                {dataTechStack.map((tech) => (
-                  <>
-                    <span className style={{ color: tech.color }}>
-                      {tech.title},{" "}
-                    </span>
-                  </>
+                {dataTechStack.map((tech, index) => (
+                  <span style={{ color: tech.color }} key={index}>
+                    {index > 0 && <>, </>}
+                    {tech.title}
+                  </span>
                 ))}
               </div>
             </div>

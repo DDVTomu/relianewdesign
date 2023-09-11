@@ -6,10 +6,6 @@ import Link from "next/link";
 import ExportedImage from "next/image";
 
 import menuFooter from "./menuFooter";
-// import IconTwitter from "@components/common/Icon/IconTwitter";
-// import IconFacebook from "@components/common/Icon/IconFacebook";
-// import IconInsta from "@components/common/Icon/IconInsta";
-// import IconArrowRightWhite from "@components/common/Icon/IconArrowRightWhite";
 
 const Footer = () => {
   const IconTwitter = dynamic(() =>

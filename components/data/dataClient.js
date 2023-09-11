@@ -3,7 +3,7 @@ const dataClient = [
     name: "Pham Tuan",
     avatar: "/images/clients/ava-1.svg",
     info: "CEO - Mbase Vietnam",
-    desc: "The applications launched successfully, attracting 10,000 downloads and 2,000–3,000 daily active users, while allowing the company to raise funds for future versions. The team strategized the project effectively, planning apps they could deliver well, and tracking the development smoothly.",
+    desc: "The products have received positive reviews in their respective app stores, a result of Relia Software’s smart engineering and appreciation for the minute details. Their work rarely required fixes, making them a steady and reliable partner. The development team is collaborative and organized.",
   },
   {
     name: "Founder & CDO",

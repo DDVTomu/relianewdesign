@@ -4,11 +4,10 @@ const FooterNav = ({ menus }) => {
   return (
     <ul className="footer-navbar">
       {menus.map((menu, key) => {
+        let menuLink = menu.external ? menu.slug : `/${menu.slug}`;
         return (
           <li key={key}>
-            <Link as={`/${menu.slug}`} href={`/${menu.slug}`} prefetch={false}>
-              <a className="footer-navbar__link">{menu.name}</a>
-            </Link>
+            <a href={menuLink} className="footer-navbar__link">{menu.name}</a>
           </li>
         );
       })}
