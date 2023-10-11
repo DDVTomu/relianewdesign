@@ -150,7 +150,7 @@ const NewBlogMain = ({
                         : ""
                     }`}
                   >
-                    <span>{cat.attributes.name}</span> [{0}]
+                    <span>{cat.attributes.name}</span>
                   </div>
                 </div>
               );
