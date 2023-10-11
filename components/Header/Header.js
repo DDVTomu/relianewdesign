@@ -2,9 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import ExportedImage from "next/image";
 import { withRouter } from "next/router";
-import { fetchAPI } from "lib/api";
-import Link from "next/link";
-import _ from "lodash";
 // this is only active when the location pathname is exactly
 // the same as the href.
 // const isActive = ({ isCurrent }) => {
@@ -16,28 +13,6 @@ const menus = [
     id: 1,
     name: "Services",
     slug: "/services",
-    subMenu: [
-      {
-        id: 1,
-        name: "Design Thinking",
-        slug: "/services#design-thinking",
-      },
-      {
-        id: 2,
-        name: "Digital Transformation",
-        slug: "/services#digital-transformation",
-      },
-      {
-        id: 3,
-        name: "App Development",
-        slug: "/services#app-development",
-      },
-      {
-        id: 4,
-        name: "Off-shore Team",
-        slug: "/services#off-shore-team",
-      },
-    ],
   },
   {
     id: 2,
@@ -70,19 +45,13 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.toggleClass = this.toggleClass.bind(this);
-    this.onClickSub = this.onClickSub.bind(this);
     this.toggleShow = this.toggleShow.bind(this);
     this.scrollCheck = this.scrollCheck.bind(this);
     this.state = {
       active: false,
       show: false,
-      openSub: false,
       activeClass: false,
-      blogData: [],
     };
-  }
-  onClickSub() {
-    this.setState({ openSub: !this.state.openSub });
   }
   toggleClass() {
     const currentState = this.state.active;
@@ -114,8 +83,9 @@ class Header extends React.Component {
     const { active } = this.state;
     return (
       <header
-        className={`header ${className || ""} ${this.state.activeClass ? "fixed" : ""
-          }`}
+        className={`header ${className || ""} ${
+          this.state.activeClass ? "fixed" : ""
+        }`}
       >
         <div className={`header__inner ${active === true ? "is-open" : ""}`}>
           <div className="container">
@@ -123,7 +93,7 @@ class Header extends React.Component {
               <div className="navbar__brand">
                 <a href="/" className="navbar__logo">
                   <ExportedImage
-                    src="/images/logo.svg"
+                    src="/images/relia-logo.png"
                     width={372}
                     height={110}
                     layout="intrinsic"
@@ -141,98 +111,22 @@ class Header extends React.Component {
               <div className="navbar__collapse" id="navbarSupportedContent">
                 <ul className="navbar__nav">
                   {menus.map((item, index) => (
-                    <li
-                      key={index}
-                      className={`${item.subMenu ? "hadSub" : ""} ${this.state.openSub === true ? "open" : ""
+                    <li key={index}>
+                      <a
+                        className={`nav-link  ${
+                          router.pathname.includes(item.slug)
+                            ? "nav-link current"
+                            : ""
                         }`}
-                    >
-                      <Link href={item.slug} scroll={true}>
-                        <a
-                          className={`nav-link  ${router.pathname.includes(item.slug)
-                              ? "nav-link current"
-                              : ""
-                            }`}
-                          role="button"
-                        >
-                          {item.name}
-                        </a>
-                      </Link>
-                      {item.subMenu && (
-                        <>
-                          <div
-                            className={`navbar__sub ${this.state.openSub === true ? "open" : ""
-                              }`}
-                          >
-                            <div className="navbar__sub_itm">
-                              <h2>Solutions We Provide</h2>
-                              <ul>
-                                {item.subMenu.map((sub, index) => (
-                                  <li key={index}>
-                                    <a href={sub.slug}>{sub.name}</a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div className="navbar__sub_itm">
-                              <div>
-                                <span>iOS</span>
-                                <span style={{ color: "#00A133" }}>
-                                  Android
-                                </span>
-                                <span style={{ color: "#9F3AFF" }}>Kotlin</span>
-                              </div>
-                              <div>
-                                <span style={{ color: "#00AFDC" }}>
-                                  React Native
-                                </span>
-                                <span style={{ color: "#0060A7" }}>
-                                  Flutter
-                                </span>
-                                <span style={{ color: "#FF4400" }}> Swift</span>
-                              </div>
-                              <div>
-                                <span style={{ color: "#D50027" }}>
-                                  Angular
-                                </span>
-                                <span style={{ color: "#00AFDC" }}>
-                                  ReactJS
-                                </span>
-                                <span style={{ color: "#2E4A60" }}> Vue.js</span>
-                              </div>
-                              <div>
-                                <span style={{ color: "#F09D00" }}>
-                                  Javascript
-                                </span>
-                                <span style={{ color: "#282828" }}> Next.js</span>
-                                <span style={{ color: "#00AFDC" }}>Golang</span>
-                              </div>
-                              <div>
-                                <span style={{ color: "#767BB7" }}>PHP</span>
-                                <span style={{ color: "#D50027" }}>
-                                  Ruby on Rails
-                                </span>
-                                <span style={{ color: "#408A3B" }}> Node.js</span>
-                              </div>
-                              <div>
-                                <span style={{ color: "#106A9B" }}>Python</span>
-                                <span style={{ color: "#407999" }}> Java</span><span style={{ color: "#0060A7" }}> ASP.NET</span>
-                              </div>
-                              <div>
-                                <span style={{ color: "#002F1F" }}>Django</span>
-                              </div>
-                            </div>
-                          </div>
-                          <span
-                            className={`icon-plus ${this.state.openSub === true ? "open" : ""
-                              }`}
-                            onClick={this.onClickSub}
-                          ></span>
-                        </>
-                      )}
+                        role="button"
+                        href={item.slug}
+                      >
+                        {item.name}
+                      </a>
                     </li>
                   ))}
                   <li className="nav-item">
-                    <a className="nav-link solid-button" href="/contact">
+                    <a className="nav-link nav-link--btn" href="/contact">
                       <b>Contact</b>
                       <span></span>
                       <span></span>

@@ -1,18 +1,19 @@
-import Link from "next/link";
+ import Link from "next/link";
 
 const FooterNav = ({ menus }) => {
-  return (
-    <ul className="footer-navbar">
-      {menus.map((menu, key) => {
-        let menuLink = menu.external ? menu.slug : `/${menu.slug}`;
-        return (
-          <li key={key}>
-            <a href={menuLink} className="footer-navbar__link">{menu.name}</a>
-          </li>
-        );
-      })}
-    </ul>
-  );
+    return (
+        <ul className="footer-navbar">
+            {menus.map((menu) => {
+                return (
+                    <li key={menu.name}>
+                        <Link as={`/${menu.slug}`} href={`/${menu.slug}`} prefetch={false}>
+                            <a className="footer-navbar__link">{menu.name}</a>
+                        </Link>
+                    </li>
+                );
+            })}
+        </ul>
+    );
 };
 
 export default FooterNav;

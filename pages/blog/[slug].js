@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Prism from "prismjs";
+import "prismjs/themes/prism-tomorrow.css"; // Import the desired theme CSS file
 import { fetchAPI } from "lib/api";
 import Layout from "@components/common/layout";
 import Seo from "@components/seo";
@@ -9,6 +11,7 @@ import CloudImg from "@components/common/Image";
 import FormatDate from "@components/common/FormatDate/FormatDate";
 import BlogSocial from "@components/common/BlogSocial/BlogSocial";
 import PrevNext from "@components/common/PrevNext/PrevNext";
+import { forEach } from "lodash";
 function convertBlogData(item, isHasAuthor = false) {
   const attributes = item.attributes;
   const category = attributes?.category?.data?.attributes?.name;
@@ -69,7 +72,14 @@ const CustomImage = ({ node, children }) => {
         alt={image.properties.alt}
       />
     ));
-
+    const tableNodes = node.children.filter(
+      (child) => child.tagName === "table"
+    );
+    if (tableNodes.length > 0) {
+      const renderedImages = tableNodes.map((table, index) => (
+        <div className={styles.table}>{table}</div>
+      ));
+    }
     // Insert the rendered images into the original children array
 
     const updatedChildren = React.Children.toArray(children);
@@ -85,8 +95,11 @@ const CustomImage = ({ node, children }) => {
 };
 
 const BlogDetailPage = ({ blog = {}, blogs, blogToggle = {} }) => {
+  useEffect(() => {
+    Prism.highlightAll();
+  });
   const seo = {
-    metaTitle: blog.title || "Blog",
+    metaTitle: blog.seoTitle || blog.title,
     metaDescription: blog.description || "Blog",
     shareImage: blog.thumnail.url,
     article: true,
@@ -101,11 +114,27 @@ const BlogDetailPage = ({ blog = {}, blogs, blogToggle = {} }) => {
         });
       });
     });
+    var table = document.getElementsByTagName("table");
+    for (let i = 0; i < table.length; i++) {
+      var parent = table[i].parentNode;
+      var wrapper = document.createElement("div");
+      wrapper.classList.add("table-scroll");
+      parent.insertBefore( wrapper, table[i] );
+      wrapper.appendChild(table[i]);
+    }
   }
 
   const expertises = {
     items: blogs ?? [],
   };
+
+  const htmlString = blog.content;
+  // Manipulate the HTML string to update the src attribute
+  const manipulatedHtml = htmlString.replace(
+    /src="(\.\.\/)+/g,
+    'src="https://api.reliasoftware.com/'
+  );
+
   return (
     <Layout>
       <Seo seo={seo} />
@@ -119,6 +148,7 @@ const BlogDetailPage = ({ blog = {}, blogs, blogToggle = {} }) => {
                   src={blog?.thumnail.url}
                   width={blog?.thumnail.width}
                   height={blog?.thumnail.height}
+                  alt={blog?.thumnail.alternativeText || "Relia Blog Img"}
                   layout="responsive"
                   objectFit="contain"
                   priority={true}
@@ -181,7 +211,7 @@ const BlogDetailPage = ({ blog = {}, blogs, blogToggle = {} }) => {
               >
                 {blog.content}
               </ReactMarkdown> */}
-              <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+              <div dangerouslySetInnerHTML={{ __html: manipulatedHtml }} />
             </div>
             <div className={styles.article__author}>
               <CloudImg
@@ -189,6 +219,7 @@ const BlogDetailPage = ({ blog = {}, blogs, blogToggle = {} }) => {
                 width={94}
                 height={94}
                 objectFit="cover"
+                alt={blog?.thumnail.alternativeText || "Relia Blog Img"}
               />
               {blog?.author && (
                 <div>

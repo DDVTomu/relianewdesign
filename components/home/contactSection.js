@@ -1,17 +1,17 @@
-import React from "react";
-import { navigate } from "react-router-dom";
-import axios from "axios";
-import validator from "email-validator";
+import React from "react"
+import { Navigate } from "react-router-dom"
+import axios from "axios"
+import validator from "email-validator"
 import ExportedImage from "next/image";
-import Animation from "@components/common/Animation";
-import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
-import dataSocial from "@components/data/dataSocial";
+import Animation from "@components/common/Animation"
+import "react-phone-number-input/style.css"
+import PhoneInput from "react-phone-number-input"
+
 const LoadingSubmit = () => (
   <div className="contact-loading">
     <span className="contact-loading-inner" />
   </div>
-);
+)
 const ContactForm = ({
   isValid,
   onChange,
@@ -21,63 +21,31 @@ const ContactForm = ({
   state,
   onUpdatePhone,
 }) => {
-  const [value, setValue] = React.useState();
-  const onChangePhone = (phone) => {
-    onUpdatePhone(phone);
-  };
+  const [value, setValue] = React.useState()
+  const onChangePhone = phone => {
+    onUpdatePhone(phone)
+  }
   return (
-    <div className="section contact">
+    <div className="contact">
       {loading && <LoadingSubmit />}
       <div className="container">
+        <Animation>
+          <h2 className="hdg-lv2">
+            Become one of our clients.
+            <br />
+            Let's make <span>great things!</span>
+          </h2>
+        </Animation>
         <div className="contact__block">
           <div className="contact__block__map">
-            {/* <ExportedImage
+            <ExportedImage
               src="/images/home/contact-map.png"
               width={597}
               height={360}
               layout="intrinsic"
               alt="Work word"
               priority
-            /> */}
-            <div>
-              <h2 className="hdg-lv2">Let’s build great things together</h2>
-              <div className="contact__block__map_info">
-                <label>Our Location</label>
-                <p>
-                  629 Nguyen Kiem Street, Phu Nhuan District, Ho Chi Minh City,
-                  Vietnam.
-                </p>
-              </div>
-              <div className="contact__block__map_info">
-                <label>Email</label>
-                <p>sales@reliasoftware.com</p>
-              </div>
-              <div className="contact__block__map_info">
-                <label>Phone</label>
-                <p>(+84) 972 016 100</p>
-              </div>
-              <div className="contact__block__map_info social">
-                <label>You can also reach out to us on</label>
-                <ul className="list-inline nav-social">
-                  {dataSocial.map((social, key) => (
-                    <li key={key}>
-                      <a
-                        href="https://twitter.com/softwarerelia"
-                        className="btn btn-twitter"
-                        rel="noopener noreferrer"
-                        aria-label="social twitter"
-                      >
-                        <ExportedImage
-                          src={social.icon}
-                          width={54}
-                          height={54}
-                        />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            />
           </div>
           <div className="contact__block__form">
             <form
@@ -99,11 +67,10 @@ const ContactForm = ({
                 <label htmlFor="FullName">Full name</label>
               </div>
               <div
-                className={`${
-                  showEmailError !== "" && showEmailError === false
-                    ? "form-group error"
-                    : "form-group"
-                }`}
+                className={`${showEmailError !== "" && showEmailError === false
+                  ? "form-group error"
+                  : "form-group"
+                  }`}
               >
                 <input
                   name="email"
@@ -120,7 +87,7 @@ const ContactForm = ({
               <div className="form-group">
                 <PhoneInput
                   name="contactNumber"
-                  className="form-control has-value"
+                  className="form-control"
                   id="ContactNumber"
                   international
                   defaultCountry="US"
@@ -158,7 +125,7 @@ const ContactForm = ({
               </div>
               <button
                 type="submit"
-                className="btn solid-button"
+                className="btn btn-primary"
                 disabled={!isValid}
               >
                 Submit
@@ -168,12 +135,12 @@ const ContactForm = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 class ContactSection extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       fullName: "",
       email: "",
@@ -184,70 +151,70 @@ class ContactSection extends React.Component {
       nDA: false,
       submitted: false,
       loading: false,
-    };
-    this.onUpdateValues = this.onUpdateValues.bind(this);
+    }
+    this.onUpdateValues = this.onUpdateValues.bind(this)
   }
   validateEmail = () => {
     if (this.state.email !== "") {
       this.setState({
         isValid: validator.validate(this.state.email),
         emailInvalid: validator.validate(this.state.email),
-      });
+      })
     } else {
-      this.setState({ isValid: false, emailInvalid: false });
+      this.setState({ isValid: false, emailInvalid: false })
     }
-  };
-  onUpdatePhone = (number) => {
-    this.setState({ contactNumber: number });
-  };
+  }
+  onUpdatePhone = number => {
+    this.setState({ contactNumber: number })
+  }
   hasNull(target) {
     for (var val in target) {
-      if (target[val] === "" || target[val] === undefined) return true;
+      if (target[val] === "" || target[val] === undefined) return true
     }
-    return false;
+    return false
   }
   checkDataNull(arr) {
-    this.setState({ isValid: !this.hasNull(arr) });
+    this.setState({ isValid: !this.hasNull(arr) })
   }
-  onUpdateValues = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+  onUpdateValues = e => {
+    this.setState({ [e.target.name]: e.target.value })
     e.target.className =
-      e.target.value != "" ? `form-control has-value` : "form-control";
-    this.validateEmail();
-    this.checkDataNull({ ...this.state });
-  };
+      e.target.value != "" ? `form-control has-value` : "form-control"
+    this.validateEmail()
+    this.checkDataNull({ ...this.state })
+  }
 
-  handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = { ...this.state };
+  handleSubmit = async e => {
+    e.preventDefault()
+    const data = { ...this.state }
     if (data.email && data.fullName && data.contactNumber) {
-      this.setState({ loading: true });
+      this.setState({ loading: true })
       axios({
         url: `https://script.google.com/macros/s/AKfycbzhePOWbcawV3iG3yVe-Z3xyeB1tFFvXZXZbqs9DT0NvecFycYD/exec`,
         data: JSON.stringify(data),
         headers: { "content-type": "application/x-www-form-urlencoded" },
         method: "POST",
-      }).then((res) => {
+      }).then(res => {
         if (res.data.result) {
-          this.setState({ submitted: true });
-          this.setState({ loading: false });
+          this.setState({ submitted: true })
+          this.setState({ loading: false })
         }
-      });
+      })
     } else {
-      this.checkDataNull(data);
+      this.checkDataNull(data)
     }
-  };
+  }
   resetForm() {
-    document.getElementById("contact-form").reset();
+    document.getElementById("contact-form").reset()
   }
 
   render() {
-    const { isValid, submitted } = this.state;
+    const { isValid, submitted } = this.state
 
     return (
       <>
         {submitted ? (
-          navigate("/thanks")
+          Navigate("/thanks")
         ) : (
           <ContactForm
             onChange={this.onUpdateValues.bind(this)}
@@ -260,7 +227,7 @@ class ContactSection extends React.Component {
           />
         )}
       </>
-    );
+    )
   }
 }
-export default ContactSection;
+export default ContactSection

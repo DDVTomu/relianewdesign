@@ -11,6 +11,14 @@ app
   .then(() => {
     const server = express();
 
+    //redirect the request from HTTP to HTTPS with a 301 status code
+    // server.use((req, res, next) => {
+    //   if (req.protocol === "http") {
+    //     return res.redirect(301, `https://${req.headers.host}${req.url}`);
+    //   }
+
+    //   next();
+    // });
     // requests to /service-worker.js
     server.get(
       "/service-worker.js",
@@ -26,10 +34,7 @@ app
       "/google490bb7a34c31b77f.html",
       express.static(path.join(__dirname, ""))
     );
-    server.get(
-      "/sw.js",
-      express.static(path.join(__dirname, ".next"))
-    );
+    server.get("/sw.js", express.static(path.join(__dirname, ".next")));
 
     // all other requests
     server.get("*", (req, res) => {

@@ -1,19 +1,19 @@
 import Link from "next/link";
-import React from "react";
+import React from "react"
 import ExportedImage from "next/image";
-import Animation from "@components/common/Animation";
+import Animation from "@components/common/Animation"
 
 const Industries = React.memo(() => (
-  <div className="section industries">
+  <div className="industries">
     <div className="container">
-      <div>
+      <Animation>
         <h2 className="hdg-lv2" style={{ marginTop: 0 }}>
           <span>Industries</span>
         </h2>
-      </div>
+      </Animation>
       <div className="industries__list">
         <div className="industries__list__col">
-          <div className="item">
+          <Animation className="item">
             <div className="item__icon">
               <ExportedImage
                 src="/images/home/profits.png"
@@ -25,9 +25,7 @@ const Industries = React.memo(() => (
               />
             </div>
             <h4>
-              <Link href="/industries/fintech-app-development/">
-                <a>Fintech</a>
-              </Link>
+              <Link href="/industries/fintech-app-development/"><a>Fintech</a></Link>
             </h4>
             <p>
               For a top notch banking and seamless finance tracking, we have
@@ -35,8 +33,8 @@ const Industries = React.memo(() => (
               end users. Our developers are well acquainted with the Fintech
               mobile app development trends.
             </p>
-          </div>
-          <div className="item">
+          </Animation>
+          <Animation className="item">
             <div className="item__icon">
               <ExportedImage
                 src="/images/home/travel.png"
@@ -48,9 +46,7 @@ const Industries = React.memo(() => (
               />
             </div>
             <h4>
-              <Link href="/industries/travel-app-development">
-                <a>Travel & Leisure</a>
-              </Link>
+              <Link href="/industries/travel-app-development"><a>Travel & Leisure</a></Link>
             </h4>
             <p>
               Focusing on the importance of visuals and their quality, a
@@ -58,10 +54,10 @@ const Industries = React.memo(() => (
               that will power your brand’s message. A vivid theming and styling
               can outline the travel mobile app by our team at Relia.
             </p>
-          </div>
+          </Animation>
         </div>
         <div className="industries__list__col">
-          <div className="item">
+          <Animation className="item">
             <div className="item__icon">
               <ExportedImage
                 src="/images/home/stethoscope.png"
@@ -73,9 +69,7 @@ const Industries = React.memo(() => (
               />
             </div>
             <h4>
-              <Link href="/industries/healthcare-app-development">
-                <a>Health & Fitness</a>
-              </Link>
+              <Link href="/industries/healthcare-app-development"><a>Health & Fitness</a></Link>
             </h4>
             <p>
               Relia Software excels in creating bespoke solutions for health and
@@ -84,8 +78,8 @@ const Industries = React.memo(() => (
               awareness around, our fitness mobile apps are designed to cater to
               your contemporary needs.
             </p>
-          </div>
-          <div className="item">
+          </Animation>
+          <Animation className="item">
             <div className="item__icon">
               <ExportedImage
                 src="/images/home/reward.png"
@@ -97,19 +91,17 @@ const Industries = React.memo(() => (
               />
             </div>
             <h4>
-              <Link href="/industries/loyalty-rewards-app-development">
-                <a>Loyalty & Rewards</a>
-              </Link>
+              <Link href="/industries/loyalty-rewards-app-development"><a>Loyalty & Rewards</a></Link>
             </h4>
             <p>
               We understand the intricate detailing that goes in the loyalty app
               development and our team delivers an aesthetically proficient
               mobile app that can give you an edge over your competitors.
             </p>
-          </div>
+          </Animation>
         </div>
         <div className="industries__list__col">
-          <div className="item">
+          <Animation className="item">
             <div className="item__icon">
               <ExportedImage
                 src="/images/home/mortarboard.png"
@@ -130,8 +122,8 @@ const Industries = React.memo(() => (
               app stores, a result of Relia Software’s smart engineering and
               appreciation for the minute details.
             </p>
-          </div>
-          <div className="item">
+          </Animation>
+          <Animation className="item">
             <div className="item__icon">
               <ExportedImage
                 src="/images/home/online-shop.png"
@@ -143,19 +135,17 @@ const Industries = React.memo(() => (
               />
             </div>
             <h4>
-              <Link href="/industries/ecommerce-app-development">
-                <a>eCommerce</a>
-              </Link>
+              <Link href="/industries/ecommerce-app-development"><a>eCommerce</a></Link>
             </h4>
             <p>
               E-Commerce is taking over the retail market of today. To keep you
               updated, Relia offers finest of ecommerce mobile app development
               services for your brand to elevate and outshine the rest.
             </p>
-          </div>
+          </Animation>
         </div>
       </div>
     </div>
   </div>
-));
-export default Industries;
+))
+export default Industries

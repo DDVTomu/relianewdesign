@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from "prop-types"
+import React from "react"
 
-const PageTitle = (props) => (
+const PageTitle = props => (
   <section
     className={`page-title ${
       props.className !== undefined ? props.className : ""
@@ -9,13 +9,13 @@ const PageTitle = (props) => (
   >
     <div className="container">
       <h1>{props.title}</h1>
-      <p dangerouslySetInnerHTML={{ __html: props.subtitle }} />
+      <p>{props.subtitle}</p>
     </div>
   </section>
-);
+)
 
 PageTitle.propTypes = {
   title: PropTypes.any,
   subtitle: PropTypes.any,
-};
-export default PageTitle;
+}
+export default PageTitle

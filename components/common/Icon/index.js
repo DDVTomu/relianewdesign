@@ -1,3 +1,3 @@
-import IconArrowRight from "./IconArrowRight";
-import IconExternal from "./IconExternal";
-export { IconArrowRight, IconExternal };
+export { default } from './IconArrowRight';
+// import IconTwitter from './IconTwitter';
+// export { IconArrowRight, IconTwitter };

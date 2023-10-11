@@ -6,7 +6,7 @@
   &__container {
     margin-bottom: 60px;
 
-    & h1 {
+    & h4 {
       font-family: "Lexend";
 
       font-weight: 400;
@@ -69,7 +69,7 @@
       background: #f7f8fa;
 
       & h2 {
-        color: #8f69ff;
+        color: #e84118;
       }
     }
 
@@ -81,7 +81,7 @@
       display: flex;
       align-items: center;
       color: #0b111f;
-      margin: 10px 0px;
+      margin: 23px 0px;
       transition: all 0.3s;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -98,13 +98,16 @@
     }
 
     & p {
-      color: #282828;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 30px;
+      font-family: "Poppins";
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+      /* or 150% */
+      align-items: center;
+      color: #6a6d73;
       overflow: hidden;
       text-overflow: ellipsis;
-      height: 98px;
+      height: 100px;
       margin-bottom: 0;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -134,10 +137,14 @@
       width: max-content;
       height: 20px;
       // background: #f1592a;
-      font-size: 18px;
-      font-style: normal;
+      border-radius: 2px;
+
+      font-family: "Poppins";
+
       font-weight: 400;
-      color: rgb(118, 118, 118);
+      font-size: 14px;
+      line-height: 16px;
+      color: #050429;
       text-align: center;
       align-items: center;
       text-transform: capitalize;
@@ -146,14 +153,17 @@
       &:last-child {
         margin: 0;
       }
+
+      &:before {
+        content: "• ";
+        font-weight: 600;
+      }
     }
   }
 
   &__featured_img {
     margin-bottom: 20px;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 3px solid #8f69ff;
+
     img {
       height: 181px;
       width: 264px;

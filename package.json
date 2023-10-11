@@ -36,6 +36,7 @@
     "next": "12.2",
     "next-optimized-images": "^2.6.2",
     "next-sitemap": "^4.0.7",
+    "prismjs": "^1.29.0",
     "prop-types": "^15.8.1",
     "qs": "^6.11.0",
     "react": "17.0.2",
@@ -44,10 +45,8 @@
     "react-dom": "17.0.2",
     "react-intersection-observer": "^9.4.3",
     "react-markdown": "^8.0.3",
-    "react-modal": "^3.16.1",
     "react-moment": "^1.1.2",
     "react-owl-carousel": "^2.3.3",
-    "react-paginate": "^8.2.0",
     "react-phone-number-input": "^3.2.19",
     "react-router-dom": "^6.10.0",
     "react-scrollspy": "^3.4.3",
@@ -57,10 +56,10 @@
     "react-truncate": "^2.4.0",
     "sass": "^1.43.4",
     "sharp": "^0.30.7",
-    "slick-carousel": "^1.8.1",
-    "swiper": "^10.2.0"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "babel-plugin-prismjs": "^2.1.0",
     "eslint": "^7",
     "eslint-config-next": "^12.0.1",
     "eslint-config-prettier": "^8.3.0",

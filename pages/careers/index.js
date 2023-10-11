@@ -74,7 +74,7 @@ const CareerPage = ({ careers }) => {
             </Animation>
             <Animation className="box-media__img">
               <Image
-                alt=""
+                alt="pexels photo"
                 src="/images/careers/pexels-photo.jpg"
                 width={980}
                 height={656}
@@ -94,26 +94,19 @@ const CareerPage = ({ careers }) => {
               <Animation className="our-blockchain__col">
                 <h3>Innovation</h3>
                 <p>
-                  We are a team of engineers and designers, and we hold the
-                  products we craft to the highest standard. We truly believe
-                  that a great team consists of awesome and diverse people.
+                We encourage a creative and forward-thinking approach and culture within our organization. In everything we do, we aim to use fresh approaches and set a new benchmark for quality. We encourage everyone to share their technological, business, and efficiency ideas and we look for the chances, the drive, and the energy to put those ideas into reality.
                 </p>
               </Animation>
               <Animation className="our-blockchain__col">
                 <h3>Efficiency</h3>
                 <p>
-                  It was popularised in the 1960s with the release of Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing softker including versions of Lorem Ipsum
+                Efficiency is a priority for Relia Software. Thus, we strives to be as efficient as possible in all of the operations that it undertakes. This helps Relia to boost efficiency and produce strong commercial outcomes, while simultaneously ensuring the pleasure of both customers and shareholders.
                 </p>
               </Animation>
               <Animation className="our-blockchain__col">
                 <h3>Knowledgeable</h3>
                 <p>
-                  Many desktop publishing packages and web page editors now use
-                  Lorem Ipsum as their default model text, and a search for
-                  'lorem ipsum' will uncover many web sites still in their
-                  infancy.
+                We begin by fusing two famous quotes: "Knowledge is power" and "Teamwork makes the dream work." On the one hand, we are a team of engineers with a strong foundation of knowledge and are constantly cultivating and learning to enhance our abilities and expertise. On the other hand, everyone is expected to contribute their knowledge and work together to achieve an overarching objective.
                 </p>
               </Animation>
             </div>
@@ -248,7 +241,7 @@ const CareerPage = ({ careers }) => {
           <div className="box-media">
             <Animation className="box-media__img">
               <Image
-                alt=""
+                alt="Job Search"
                 src="/images/careers/Job-Search.png"
                 width={972}
                 height={920}

@@ -1,15 +1,15 @@
 // import ReactMarkdown from "react-markdown";
 import { fetchAPI } from "@lib/api";
 import Layout from "@components/common/layout";
-import dynamic from "next/dynamic";
+import ExportedImage from "next/image";
+import Breadcrumbs from "@components/common/breadcrumbs";
 import Seo from "@components/seo";
 import PorfolioList from "@components/common/PortfolioList/PorfolioList";
-import { ContactSubSection } from "@components/home";
 import styles from "./portfolio.module.scss";
-import PageTitle from "@components/pageTitle";
+
 const Portfolio = ({ portfolios }) => {
   const seo = {
-    metaTitle: portfolios.metaTitle || "Portfolio",
+    metaTitle: portfolios.metaTitle || "Portfolio | Relia Software",
     metaDescription: portfolios.description || "Portfolio",
     // shareImage: article.image,
     article: true,
@@ -28,22 +28,30 @@ const Portfolio = ({ portfolios }) => {
   return (
     <Layout>
       <Seo seo={seo} />
-      <PageTitle
-        title="Trusted by leading brands, innovative startups and the Fortune 500"
-        subtitle="Since the very get-go we have successfully completed over 300+ projects. Each day, we create software that solves real users’ problems and responds to their needs."
-      />
-      <div className="container">
-        <h2 className={styles.portfolio__title}>Portfolio</h2>
-      </div>
-      <PorfolioList portfolios={portfolios.data} />
-      <ContactSubSection />
+      <section className={` ${"container"} ${styles.hero__container}`}>
+        <div className={styles.hero}>
+          <p className={styles.hero__mini_sub}>WORK</p>
+          <Breadcrumbs breadcrumbs={breadcrumbs} />
+          <h1>
+            TRUSTED BY <br />
+            LEADING BRANDS, INNOVATIVE <br />
+            STARTUPS AND THE FORTUNE 500
+          </h1>
+          <p className={styles.hero__sub}>
+            Since the very get-go we have successfully completed over 300+
+            projects. Each day, we create software that solves real users’
+            problems and responds to their needs.
+          </p>
+        </div>
+        <PorfolioList portfolios={portfolios} />
+      </section>
     </Layout>
   );
 };
 
 export async function getServerSideProps({ params }) {
   const portfolios = await fetchAPI(
-    "portfolios?pagination[pageSize]=10&populate=*&sort[0]=id"
+    "portfolios?pagination[pageSize]=100&populate=*&sort[0]=id"
   );
   return {
     props: { portfolios },

@@ -4,85 +4,74 @@ import CloudImg from "@components/common/Image";
 import Truncate from "react-truncate";
 import Moment from "react-moment";
 import Animation from "@components/common/Animation";
-import Slider from "react-slick";
-const BlogSection = React.memo(({ data = [] }) => {
-  const settings = {
-    dots: "false",
-    infinite: "true",
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
 
+const BlogSection = React.memo(({ data = [] }) => {
   return (
-    <div className="section blogs">
+    <div className="blogs">
       <div className="container">
         <div>
-          <h2 className="hdg-lv2">Blog</h2>
-          <p className="hdg-lv2-sub">
-            We document our process and learnings with new articles every week.
-          </p>
+          <h2 className="hdg-lv2">
+            Blog/<span>News</span>
+          </h2>
         </div>
+        <Animation className="blogs__list">
+          {data.map((blog, index) => (
+            <div className="item" key={index}>
+              <a href={`/blog/${blog.attributes.slug}`} key={index}>
+                <h6 className="item__title">{blog.attributes.title}</h6>
+                <div className="item__meta">
+                  <span className="category">
+                    <span>{blog.attributes.category.data.attributes.name}</span>
+                  </span>
+                  <span className="date">
+                    <Moment
+                      format="DD MMM, YYYY"
+                      date={blog.attributes.createdAt}
+                    />
+                  </span>
+                </div>
+                <div className="item__thumb">
+                  {blog.attributes.thumnail.data.attributes.formats.small && (
+                    <CloudImg
+                      src={
+                        blog.attributes.thumnail.data.attributes.formats.small
+                          .url
+                      }
+                      width={
+                        blog.attributes.thumnail.data.attributes.formats.small
+                          .width
+                      }
+                      height={
+                        blog.attributes.thumnail.data.attributes.formats.small
+                          .height
+                      }
+                      layout="responsive"
+                      objectFit="cover"
+                      priority={true}
+                      alt={
+                        blog.attributes.thumnail.data.attributes
+                          .alternativeText || "Relia Blog Img"
+                      }
+                    />
+                  )}
+                </div>
+                <div className="item__text">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: blog.attributes.description,
+                    }}
+                  ></div>
+                </div>
+              </a>
+            </div>
+          ))}
+        </Animation>
+        <Animation className="blogs__more">
+          <Link href="/blog">
+            <a className="btn">VIEW MORE</a>
+          </Link>
+        </Animation>
       </div>
-      <Slider className="blogs__list" {...settings}>
-        {data.map((blog, index) => (
-          <div className="item" key={index}>
-            <a href={`/blog/${blog.attributes.slug}`} key={index}>
-              <div className="item__thumb">
-                {blog.attributes.thumnail.data.attributes.formats.small && (
-                  <CloudImg
-                    src={
-                      blog.attributes.thumnail.data.attributes.formats.small.url
-                    }
-                    // width={
-                    //   blog.attributes.thumnail.data.attributes.formats.small
-                    //     .width
-                    // }
-                    // height={
-                    //   blog.attributes.thumnail.data.attributes.formats.small
-                    //     .height
-                    // }
-                    width={500}
-                    height={250}
-                    layout="responsive"
-                    objectFit="cover"
-                    priority={true}
-                  />
-                )}
-              </div>
-              <h6 className="item__title">{blog.attributes.title}</h6>
-
-              <div
-                className="item__text"
-                dangerouslySetInnerHTML={{
-                  __html: blog.attributes.description,
-                }}
-              ></div>
-            </a>
-          </div>
-        ))}
-      </Slider>
-      <div className="blogs__more">
-        <Link href="/blog">
-          <button className="solid-button">Read more</button>
-        </Link>
-      </div>
-      <div className="blogs__gradientLeft" bis_skin_checked="1"></div>
-      <div className="blogs__gradientRight" bis_skin_checked="1"></div>
     </div>
   );
 });
