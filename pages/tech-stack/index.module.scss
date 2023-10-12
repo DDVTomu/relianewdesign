@@ -233,8 +233,6 @@
 }
 
 .applications {
-  margin-bottom: 60px;
-
   &__header {
     font-family: "Lexend";
     font-weight: 600;
@@ -257,52 +255,59 @@
   &__list {
     list-style: none;
     padding: 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     flex-wrap: wrap;
-    column-gap: 24px;
-    row-gap: 55px;
-    padding: 0 120px;
+    column-gap: 93px;
+    row-gap: 40px;
+    margin-top: 0px;
+    margin-bottom: 80px;
+    margin-left: 0px;
 
-    @include media(mobile, lg-mobile, lg-tablet, tablet) {
-      padding: 0px;
-      margin: 0px;
-    }
-
-    & li a {
-      background: #ffffff;
-      border: 1px solid #eeeeee;
+    & li {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid #b2bec3;
+      transition: transform 0.2s ease-in-out;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
-      border-radius: 8px;
-      width: 184px;
-      display: flex;
-      align-items: center;
-      padding: 11px;
-      column-gap: 8px;
-
-      @include media(mobile, lg-mobile, lg-tablet, tablet) {
-        width: calc((100% - 24px) / 2);
-      }
-
+      margin: 0;
       &:hover {
         transform: scale(1.1);
         transition: transform 0.2s ease-in-out,
           -webkit-transform 0.2s ease-in-out;
       }
+
+      .a {
+        display: flex;
+        align-items: center;
+        padding: 25px 0px;
+        column-gap: 8px;
+        justify-content: center;
+        @include media(mobile, lg-mobile, lg-tablet, tablet) {
+          width: calc((100% - 24px) / 2);
+        }
+      }
     }
   }
 
   &__apps {
+    & div {
+      &:last-child {
+        & ul {
+          margin-bottom: 0px;
+        }
+      }
+    }
     & h2 {
-      font-family: "Lexend";
+      color: #282828;
+      font-size: 24px;
       font-weight: 700;
-      font-size: 33px;
-      line-height: 19px;
+      letter-spacing: 0.25px;
       display: flex;
       align-items: center;
       text-transform: uppercase;
-      margin-top: 141px;
-      margin-bottom: 85px;
-
+      margin-top: 0px;
+      margin-bottom: 30px;
       @include media(mobile, lg-mobile, lg-tablet, tablet) {
         line-height: 40px;
         margin-top: 60px;

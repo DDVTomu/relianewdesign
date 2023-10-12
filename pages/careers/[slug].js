@@ -37,17 +37,17 @@ const CareerDetailPage = ({ career = {} }) => {
     article: true,
   };
 
-  // if (typeof window !== "undefined") {
-  //   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  //     anchor.addEventListener("click", function (e) {
-  //       e.preventDefault();
+  if (typeof window !== "undefined") {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
 
-  //       document.querySelector(this.getAttribute("href")).scrollIntoView({
-  //         behavior: "smooth",
-  //       });
-  //     });
-  //   });
-  // }
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+    });
+  }
 
   return (
     <Layout>
@@ -64,10 +64,12 @@ const CareerDetailPage = ({ career = {} }) => {
             <span>{career.address}</span>
           </div>
           <div className="container--small">
-            <div
+            <ReactMarkdown
+              components={{ h2: HeadingRenderer }}
               className="careers-content"
-              dangerouslySetInnerHTML={{ __html: career.content }}
-            />
+            >
+              {career.content}
+            </ReactMarkdown>
             <h2 className="hdg-lv2">
               Apply to <span>Job</span>
             </h2>

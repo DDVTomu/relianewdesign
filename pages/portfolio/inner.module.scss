@@ -62,7 +62,7 @@
         width: 100%;
         padding: 17px;
       }
-      & h1 {
+      & h2 {
         font-weight: 700;
         font-size: 80px;
         line-height: 100px;
@@ -74,12 +74,9 @@
           line-height: 60px;
         }
       }
-      .h3 {
-        font-size: 1.38316rem;
+      & h3 {
         margin: 0;
         animation-delay: 0.5s;
-        font-family: HKNova, serif;
-        font-weight: 800;
       }
     }
     &__info {
@@ -141,12 +138,13 @@
 
   &_content {
     & h2 {
+      color: #282828;
       text-align: center;
+      font-size: 48px;
       font-weight: 700;
-      font-size: 40px;
-      line-height: 50px;
-      margin-top: 62px;
-      margin-bottom: 54px;
+      letter-spacing: 0.25px;
+      margin-top: 80px;
+      margin-bottom: 21px;
       @media only screen and (max-width: 767px) {
         font-size: 30px;
         line-height: 25px;
@@ -154,11 +152,13 @@
       }
     }
     & p {
+      color: #636e72;
+      text-align: center;
+      font-size: 20px;
       font-weight: 400;
-      font-size: 24px;
-      line-height: 41px;
-      letter-spacing: 0.35px;
-      text-align: justify;
+      line-height: 32px; /* 160% */
+      letter-spacing: 0.25px;
+      // text-align: justify;
       @media only screen and (max-width: 767px) {
         font-size: 20px;
         line-height: 32px;
@@ -209,16 +209,18 @@
         margin: 62px 0px;
         display: flex;
         align-items: center;
-        column-gap: 17px;
+        column-gap: 80px;
+        justify-content: space-between;
         @media only screen and (max-width: 767px) {
           flex-direction: column-reverse;
         }
         & h2 {
-          width: calc(100% - 550px);
+          width: 500px;
+          color: #636e72;
+          font-size: 18px;
           font-weight: 400;
-          font-size: 26px;
-          line-height: 60px;
-          letter-spacing: 0.35px;
+          line-height: 30px; /* 166.667% */
+          letter-spacing: 0.25px;
           text-align: left;
           @media only screen and (max-width: 1300px) {
             width: 100%;
@@ -231,8 +233,10 @@
           }
         }
         &_img {
-          width: 550px;
-          border-radius: 0 70px 0 70px;
+          width: 500px;
+          height: 250px;
+          border-radius: 20px;
+          border: 1px solid #b2bec3;
           overflow: hidden;
           @media only screen and (max-width: 767px) {
             width: 100%;
@@ -357,31 +361,34 @@
 
   &_scopes {
     & ul {
-      display: flex;
-      column-gap: 71px;
+      display: grid;
+      column-gap: 30px;
       justify-content: space-between;
-      margin-top: 60px;
-      margin-bottom: 60px;
+      margin-top: 40px;
+      margin-bottom: 40px;
       list-style: none;
       margin-left: 0;
+      grid-template-columns: repeat(3, 1fr);
       @media only screen and (max-width: 767px) {
+        display: flex;
         flex-direction: column;
         column-gap: 71px;
         margin-bottom: 90px;
       }
       & li {
-        width: 395px;
-        height: 190px;
-        background: rgba(44, 20, 175, 0.9);
+        padding: 40px 20px;
+        border-radius: 20px;
+        border: 1px solid #b2bec3;
+        background: #fff;
         display: flex;
         align-items: center;
-        border-radius: 15px;
+        justify-content: center;
         color: #fff;
-        font-weight: 600;
+        color: #8f69ff;
+        text-align: center;
         font-size: 24px;
-        line-height: 38px;
-        padding: 0px 22px;
-        text-align: initial;
+        font-weight: 700;
+        letter-spacing: 0.167px;
         @media only screen and (max-width: 767px) {
           margin: 0 auto;
           width: 100%;
@@ -394,18 +401,19 @@
 
   &_design {
     & ol {
-      background: #dedede;
+      border: 1px solid #b2bec3;
+      background: #fff;
       padding: 60px;
       border-radius: 0 70px 0 70px;
-      margin: 0;
+      margin: 40px 0px;
       @media only screen and (max-width: 767px) {
         padding: 40px;
       }
       & li {
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 35px;
-        letter-spacing: 0.35px;
+        color: #8f69ff;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.167px;
       }
       & li::marker {
         font-weight: 300;
@@ -499,6 +507,17 @@
       & li::marker {
         font-weight: 300;
       }
+    }
+  }
+}
+.casestudy {
+  &_title {
+    text-align: center;
+    & h2 {
+      color: #282828;
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: 0.25px;
     }
   }
 }

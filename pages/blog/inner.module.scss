@@ -186,14 +186,6 @@
     a {
       color: #001ced;
     }
-    @media screen and (max-width: 767px) {
-      h2,
-      h3,
-      h4,
-      p {
-        text-align: left !important;
-      }
-    }
   }
   &__author {
     display: flex;

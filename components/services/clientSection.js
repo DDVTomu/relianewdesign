@@ -1,10 +1,10 @@
-import Link from "next/link"
-import React from "react"
-import Image from "next/image"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import Slider from "react-slick"
-import Animation from "@components/common/Animation"
+import Link from "next/link";
+import React from "react";
+import Image from "next/image";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import Animation from "@components/common/Animation";
 
 const ClientSection = () => {
   const settings = {
@@ -14,8 +14,31 @@ const ClientSection = () => {
     arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-  }
 
+    ///////////////////////////////////////////////////////
+    // autoplay: true,
+    // autoplaySpeed: -100,
+    // speed: 4000,
+    // cssEase: "linear",
+    // infinite: true,
+    // focusOnSelect: false,
+    // responsive: [
+    //   {
+    //     breakpoint: 768,
+    //     settings: {
+    //       arrows: false,
+    //       slidesToShow: 3,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 480,
+    //     settings: {
+    //       arrows: false,
+    //       slidesToShow: 1,
+    //     },
+    //   },
+    // ],
+  };
 
   return (
     <div className="clients">
@@ -31,11 +54,11 @@ const ClientSection = () => {
           <Slider {...settings} className="clients__slider">
             <div className="clients__slider__item">
               <p>
-                The products have received positive reviews in their
-                respective app stores, a result of Relia Software’s smart
-                engineering and appreciation for the minute details. Their
-                work rarely required fixes, making them a steady and reliable
-                partner. The development team is collaborative and organized.
+                The products have received positive reviews in their respective
+                app stores, a result of Relia Software’s smart engineering and
+                appreciation for the minute details. Their work rarely required
+                fixes, making them a steady and reliable partner. The
+                development team is collaborative and organized.
               </p>
               <div className="author">
                 <p className="author__name">Pham Tuan</p>
@@ -45,10 +68,10 @@ const ClientSection = () => {
             <div className="clients__slider__item">
               <p>
                 The applications launched successfully, attracting 10,000
-                downloads and 2,000–3,000 daily active users, while allowing
-                the company to raise funds for future versions. The team
-                strategized the project effectively, planning apps they could
-                deliver well, and tracking the development smoothly.
+                downloads and 2,000–3,000 daily active users, while allowing the
+                company to raise funds for future versions. The team strategized
+                the project effectively, planning apps they could deliver well,
+                and tracking the development smoothly.
               </p>
               <div className="author">
                 <p className="author__name">Founder & CDO</p>
@@ -59,11 +82,11 @@ const ClientSection = () => {
             </div>
             <div className="clients__slider__item">
               <p>
-                Relia Software delivered high-quality designs and they
-                continue to develop the app. The team is very cost-efficient
-                and thorough in their work ethic, which helps them meet
-                expectations with all of their deliverables. Additionally,
-                they are praised for their communication and expertise.
+                Relia Software delivered high-quality designs and they continue
+                to develop the app. The team is very cost-efficient and thorough
+                in their work ethic, which helps them meet expectations with all
+                of their deliverables. Additionally, they are praised for their
+                communication and expertise.
               </p>
               <div className="author">
                 <p className="author__name">Founder & CEO</p>
@@ -144,6 +167,6 @@ const ClientSection = () => {
         </div>
       </div>
     </div>
-  )
-}
-export default ClientSection
+  );
+};
+export default ClientSection;

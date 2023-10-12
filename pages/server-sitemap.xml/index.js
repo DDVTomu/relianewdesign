@@ -29,7 +29,7 @@ export const getServerSideProps = async (ctx) => {
   }));
 
   const careerSiteMap = careers?.data?.map((item) => ({
-    loc: `${siteUrl}/careers/${item.attributes.slug}`,
+    loc: `${siteUrl}/career/${item.attributes.slug}`,
     lastmod: new Date().toISOString(),
     changefreq: "daily",
     priority: 0.7,

@@ -12,7 +12,7 @@
     font-weight: 600;
     font-size: 24px;
     line-height: 30px;
-    color: #FF6255;
+    color: #ff6255;
     margin-top: 30px;
     @include media(mobile) {
       font-size: 18px;
@@ -45,5 +45,17 @@
       font-size: 18px;
       line-height: 24x;
     }
+  }
+}
+
+.portfolio {
+  &__title {
+    color: #282828;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+    margin-top: 80px;
+    margin-bottom: 0px;
   }
 }

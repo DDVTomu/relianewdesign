@@ -1,22 +1,26 @@
 import React from "react";
 import Seo from "@components/seo";
 import Layout from "@components/common/layout";
-import { fetchAPI } from "lib/api";
+import { fetchAPI } from "@lib/api";
 import dynamic from "next/dynamic";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { GlobalContext } from "./_app";
-const HeroSection = dynamic(() => import('@components/home/heroSection'))
-const IntroSection = dynamic(() => import('@components/home/introSection'))
-const ProjectsSection = dynamic(() => import('@components/home/projectsSection'))
-const IndustriesSection = dynamic(() => import('@components/home/industriesSection'))
-const ClientSection = dynamic(() => import('@components/home/clientSection'))
-const AwardSection = dynamic(() => import('@components/home/awardSection'))
-const TopQualitySection = dynamic(() => import('@components/home/topQualitySection'))
-const BlogSection = dynamic(() => import('@components/home/blogSection'))
-const ContactSection = dynamic(() => import('@components/home/contactSection'))
 
-const Home = ({ homepage, portfolios, blogs }) => {
+const HeroSection = dynamic(() => import("@components/home/heroSection"));
+const IntroSection = dynamic(() => import("@components/home/introSection"));
+const ProjectsSection = dynamic(() =>
+  import("@components/home/projectsSection")
+);
+const ClientSection = dynamic(() => import("@components/home/clientSection"));
+const AwardSection = dynamic(() => import("@components/home/awardSection"));
+const BlogSection = dynamic(() => import("@components/home/blogSection"));
+const ContactSection = dynamic(() => import("@components/home/contactSection"));
+const TrustedSection = dynamic(() => import("@components/home/trustedSection"));
+const BusinessSection = dynamic(() =>
+  import("@components/home/businessSection")
+);
+const Home = ({ portfolios, blogs }) => {
   const global = React.useContext(GlobalContext);
   const seo = {
     metaTitle:
@@ -35,11 +39,11 @@ const Home = ({ homepage, portfolios, blogs }) => {
       <Seo seo={seo} />
       <HeroSection />
       <IntroSection />
-      <ProjectsSection data={portfolios.data} />
-      <IndustriesSection />
-      <ClientSection />
       <AwardSection />
-      <TopQualitySection />
+      <TrustedSection />
+      <ProjectsSection data={portfolios.data} />
+      <BusinessSection />
+      <ClientSection />
       <BlogSection data={blogs.data} />
       <ContactSection />
     </Layout>
@@ -47,15 +51,14 @@ const Home = ({ homepage, portfolios, blogs }) => {
 };
 
 export async function getStaticProps() {
-  const homepage = await fetchAPI("homepage");
   const portfolios = await fetchAPI(
-    "portfolios?pagination[pageSize]=6&populate=*&sort[0]=createdAt%3Adesc&_limit=6"
+    "portfolios?pagination[pageSize]=5&populate=*&sort[0]=createdAt%3Adesc&_limit=5"
   );
   const blogs = await fetchAPI(
-    "blogs?pagination[pageSize]=3&populate=*&sort[0]=createdAt%3Adesc&_limit=3"
+    "blogs?pagination[pageSize]=6&populate=*&sort[0]=createdAt%3Adesc&_limit=6"
   );
   return {
-    props: { homepage, portfolios, blogs },
+    props: { portfolios, blogs },
     revalidate: 1,
   };
 }

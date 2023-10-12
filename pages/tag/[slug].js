@@ -7,50 +7,7 @@ import BlogMain from "@components/common/BlogMain/BlogMain";
 import _ from "lodash";
 import { useEffect } from "react";
 import ogpImage from "/assets/images/blog.jpg";
-
-function groupArrayIntoChunksWithKeys(bigArray) {
-  const groupedArrays = [];
-  const chunkSize = 9;
-  let page = 0;
-  for (let i = 0; i < bigArray.length; i += chunkSize) {
-    const chunk = bigArray.slice(i, i + chunkSize);
-    page = page + 1; // Create a key for each chunk
-    const chunkWithKey = { page, data: chunk }; // Add a key-value pair to the chunk
-    groupedArrays.push(chunkWithKey);
-  }
-
-  return groupedArrays;
-}
-
-function groupByCategoryPaged(data = []) {
-  if (!data?.length) {
-    return [];
-  }
-  const formattedData = data.map((item) => {
-    const attributes = item.attributes;
-    const category = attributes?.category?.data?.attributes?.name;
-    const thumnail = attributes?.thumnail?.data?.attributes;
-    const tags = attributes?.tags?.data?.map?.((tag) => {
-      return tag?.attributes?.name;
-    });
-
-    return {
-      ...attributes,
-      category,
-      tags,
-      thumnail,
-    };
-  });
-  return _.map(
-    _.groupBy(formattedData, (blog) => blog.category),
-    (blogs, category) => {
-      return {
-        expert: category,
-        items: groupArrayIntoChunksWithKeys(blogs),
-      };
-    }
-  );
-}
+import Search from "@components/common/Search/Search";
 
 function groupByCategory(data = []) {
   if (!data?.length) {
@@ -86,15 +43,7 @@ function groupByCategory(data = []) {
   );
 }
 
-const TagFilterPage = ({
-  blogs,
-  total,
-  allBlogs,
-  totalBlogsData,
-  pagedAllBlogs,
-  pagedBlogs,
-  tagTitle,
-}) => {
+const TagFilterPage = ({ blogs, total, allBlogs, tagTitle }) => {
   const seo = {
     metaTitle: `${tagTitle} | Relia Software` || "Tag | Relia Software",
     metaDescription: tagTitle || "Tag",
@@ -135,15 +84,8 @@ const TagFilterPage = ({
           </div>
         </div>
       </section>
+      <Search data={blogs} blogs={allBlogs} />
       {/* <BlogMain expertises={blogs} total={total} blogs={allBlogs} /> */}
-      <BlogMain
-        expertises={blogs}
-        total={total}
-        blogs={allBlogs}
-        totalBlogsData={totalBlogsData}
-        pagedBlogs={pagedBlogs}
-        pagedAllBlogs={pagedAllBlogs}
-      />
     </Layout>
   );
 };
@@ -164,8 +106,6 @@ export async function getServerSideProps({ params }) {
   }
   const blogsTotal = data?.length;
   const blogsData = groupByCategory(data);
-  const pagedBlogs = groupByCategoryPaged(data);
-  const pagedAllBlogs = groupArrayIntoChunksWithKeys(data);
   const tagTitle = blogTag?.data[0].attributes?.name;
   return {
     props: {
@@ -173,8 +113,6 @@ export async function getServerSideProps({ params }) {
       total: blogsTotal,
       allBlogs: data,
       tagTitle: tagTitle,
-      pagedBlogs,
-      pagedAllBlogs,
     },
   };
 }
